@@ -1,0 +1,1088 @@
+{
+  "company": {
+    "name": "Fhulufhelo Tours",
+    "tagline": "25 Years of Tourism Excellence in South Africa",
+    "description": "Fhulufhelo Tours is a leading South African tour operator with 25 years of experience in providing tailor-made tourism experiences. We specialize in day tours, multi-day packages, and custom multi-city tours across South Africa's most iconic destinations.",
+    "credentials": {
+      "ttosRegistration": "TTOS Registered Tour Operator",
+      "visaServices": "Visa Application Services Available",
+      "processingTime": "2-5 working days processing time"
+    },
+    "contact": {
+      "whatsapp": "+27 82 123 4567",
+      "email": "info@fhulufhelotours.co.za",
+      "phone": "+27 11 234 5678"
+    },
+    "experience": {
+      "years": 25,
+      "specialization": "Tailor-made tourism experiences",
+      "markets": ["Domestic", "International", "Corporate", "Leisure"]
+    }
+  },
+  "services": {
+    "dayTours": {
+      "title": "Day Tours",
+      "description": "Explore South Africa's most iconic destinations in single-day experiences",
+      "tours": [
+        {
+          "id": "soweto-tour",
+          "name": "Soweto Tour",
+          "duration": "Full Day",
+          "pickupTime": "08:00",
+          "returnTime": "17:00",
+          "price": {
+            "adult": 850,
+            "child": 650,
+            "currency": "ZAR"
+          },
+          "description": "Experience the vibrant culture and rich history of Soweto, including visits to Vilakazi Street, Mandela House, and the Hector Pieterson Memorial.",
+          "highlights": [
+            "Vilakazi Street",
+            "Mandela House Museum",
+            "Hector Pieterson Memorial",
+            "Regina Mundi Church",
+            "Local township experience"
+          ],
+          "inclusions": [
+            "Professional guide",
+            "Transportation",
+            "Entrance fees",
+            "Lunch at local restaurant"
+          ],
+          "exclusions": [
+            "Personal expenses",
+            "Gratuities"
+          ],
+          "location": "Johannesburg",
+          "category": "Cultural",
+          "difficulty": "Easy",
+          "minAge": 5,
+          "maxGroupSize": 15,
+          "availableDays": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+        },
+        {
+          "id": "johannesburg-inner-city",
+          "name": "Johannesburg Inner City Tour",
+          "duration": "Half Day",
+          "pickupTime": "09:00",
+          "returnTime": "14:00",
+          "price": {
+            "adult": 650,
+            "child": 450,
+            "currency": "ZAR"
+          },
+          "description": "Discover the heart of Johannesburg with visits to key landmarks and historical sites.",
+          "highlights": [
+            "Constitution Hill",
+            "Newtown Cultural Precinct",
+            "Maboneng Precinct",
+            "Carlton Centre",
+            "Gandhi Square"
+          ],
+          "inclusions": [
+            "Professional guide",
+            "Transportation",
+            "Entrance fees"
+          ],
+          "exclusions": [
+            "Lunch",
+            "Personal expenses",
+            "Gratuities"
+          ],
+          "location": "Johannesburg",
+          "category": "Cultural",
+          "difficulty": "Easy",
+          "minAge": 5,
+          "maxGroupSize": 12,
+          "availableDays": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+        },
+        {
+          "id": "gold-reef-city",
+          "name": "Gold Reef City AND Theme Park",
+          "duration": "Full Day",
+          "pickupTime": "09:00",
+          "returnTime": "18:00",
+          "price": {
+            "adult": 950,
+            "child": 750,
+            "currency": "ZAR"
+          },
+          "description": "Experience the thrill of Gold Reef City theme park with its exciting rides and historical gold mining exhibits.",
+          "highlights": [
+            "Theme park rides",
+            "Gold mining museum",
+            "Underground mine tour",
+            "Gold pouring demonstration",
+            "Entertainment shows"
+          ],
+          "inclusions": [
+            "Professional guide",
+            "Transportation",
+            "Theme park entrance",
+            "Mine tour"
+          ],
+          "exclusions": [
+            "Food and beverages",
+            "Personal expenses",
+            "Gratuities"
+          ],
+          "location": "Johannesburg",
+          "category": "Entertainment",
+          "difficulty": "Easy",
+          "minAge": 3,
+          "maxGroupSize": 20,
+          "availableDays": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+        },
+        {
+          "id": "apartheid-museum",
+          "name": "Apartheid Museum",
+          "duration": "Half Day",
+          "pickupTime": "10:00",
+          "returnTime": "15:00",
+          "price": {
+            "adult": 550,
+            "child": 350,
+            "currency": "ZAR"
+          },
+          "description": "Visit the Apartheid Museum to understand South Africa's journey to democracy through powerful exhibits and multimedia presentations.",
+          "highlights": [
+            "Apartheid Museum",
+            "Historical exhibits",
+            "Multimedia presentations",
+            "Guided tour"
+          ],
+          "inclusions": [
+            "Professional guide",
+            "Transportation",
+            "Museum entrance"
+          ],
+          "exclusions": [
+            "Lunch",
+            "Personal expenses",
+            "Gratuities"
+          ],
+          "location": "Johannesburg",
+          "category": "Educational",
+          "difficulty": "Easy",
+          "minAge": 10,
+          "maxGroupSize": 15,
+          "availableDays": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+        },
+        {
+          "id": "pretoria-city-tour",
+          "name": "Pretoria City Tour",
+          "duration": "Full Day",
+          "pickupTime": "08:30",
+          "returnTime": "17:30",
+          "price": {
+            "adult": 750,
+            "child": 550,
+            "currency": "ZAR"
+          },
+          "description": "Explore the administrative capital of South Africa with visits to Union Buildings, Voortrekker Monument, and other historical sites.",
+          "highlights": [
+            "Union Buildings",
+            "Voortrekker Monument",
+            "Church Square",
+            "Freedom Park",
+            "Pretoria Botanical Gardens"
+          ],
+          "inclusions": [
+            "Professional guide",
+            "Transportation",
+            "Entrance fees",
+            "Lunch"
+          ],
+          "exclusions": [
+            "Personal expenses",
+            "Gratuities"
+          ],
+          "location": "Pretoria",
+          "category": "Cultural",
+          "difficulty": "Easy",
+          "minAge": 5,
+          "maxGroupSize": 15,
+          "availableDays": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+        },
+        {
+          "id": "cullinan-diamond-mine",
+          "name": "Cullinan Diamond Mine",
+          "duration": "Full Day",
+          "pickupTime": "08:00",
+          "returnTime": "17:00",
+          "price": {
+            "adult": 1200,
+            "child": 900,
+            "currency": "ZAR"
+          },
+          "description": "Visit the famous Cullinan Diamond Mine where the world's largest diamond was discovered, and learn about diamond mining processes.",
+          "highlights": [
+            "Diamond mine tour",
+            "Mining museum",
+            "Diamond cutting demonstration",
+            "Historical exhibits",
+            "Surface mine viewing"
+          ],
+          "inclusions": [
+            "Professional guide",
+            "Transportation",
+            "Mine tour",
+            "Safety equipment",
+            "Lunch"
+          ],
+          "exclusions": [
+            "Personal expenses",
+            "Gratuities"
+          ],
+          "location": "Cullinan",
+          "category": "Educational",
+          "difficulty": "Easy",
+          "minAge": 8,
+          "maxGroupSize": 12,
+          "availableDays": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+        },
+        {
+          "id": "lion-cheetah-sanctuary",
+          "name": "Lion and Cheetah Sanctuary",
+          "duration": "Full Day",
+          "pickupTime": "08:00",
+          "returnTime": "17:00",
+          "price": {
+            "adult": 1100,
+            "child": 800,
+            "currency": "ZAR"
+          },
+          "description": "Get up close with lions and cheetahs in a conservation-focused sanctuary experience.",
+          "highlights": [
+            "Lion interaction",
+            "Cheetah encounter",
+            "Guided sanctuary tour",
+            "Conservation education",
+            "Wildlife photography"
+          ],
+          "inclusions": [
+            "Professional guide",
+            "Transportation",
+            "Sanctuary entrance",
+            "Guided tour",
+            "Lunch"
+          ],
+          "exclusions": [
+            "Personal expenses",
+            "Gratuities"
+          ],
+          "location": "Hartbeespoort",
+          "category": "Wildlife",
+          "difficulty": "Easy",
+          "minAge": 6,
+          "maxGroupSize": 15,
+          "availableDays": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+        },
+        {
+          "id": "elephant-sanctuary",
+          "name": "Elephant Sanctuary",
+          "duration": "Full Day",
+          "pickupTime": "08:00",
+          "returnTime": "17:00",
+          "price": {
+            "adult": 1300,
+            "child": 950,
+            "currency": "ZAR"
+          },
+          "description": "Experience the gentle giants of Africa in an ethical elephant sanctuary with hands-on interaction opportunities.",
+          "highlights": [
+            "Elephant interaction",
+            "Guided sanctuary tour",
+            "Educational presentation",
+            "Walking with elephants",
+            "Feeding experience"
+          ],
+          "inclusions": [
+            "Professional guide",
+            "Transportation",
+            "Sanctuary entrance",
+            "Guided tour",
+            "Lunch"
+          ],
+          "exclusions": [
+            "Personal expenses",
+            "Gratuities"
+          ],
+          "location": "Hartbeespoort",
+          "category": "Wildlife",
+          "difficulty": "Easy",
+          "minAge": 6,
+          "maxGroupSize": 12,
+          "availableDays": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+        },
+        {
+          "id": "ukuthula-lion-walk",
+          "name": "Ukuthula Lion Walk",
+          "duration": "Full Day",
+          "pickupTime": "08:00",
+          "returnTime": "17:00",
+          "price": {
+            "adult": 1400,
+            "child": 1000,
+            "currency": "ZAR"
+          },
+          "description": "Walk alongside lions in their natural habitat in this unique and unforgettable wildlife experience.",
+          "highlights": [
+            "Lion walking experience",
+            "Guided wildlife tour",
+            "Conservation education",
+            "Wildlife photography",
+            "Nature trails"
+          ],
+          "inclusions": [
+            "Professional guide",
+            "Transportation",
+            "Lion walk experience",
+            "Safety briefing",
+            "Lunch"
+          ],
+          "exclusions": [
+            "Personal expenses",
+            "Gratuities"
+          ],
+          "location": "Hartbeespoort",
+          "category": "Wildlife",
+          "difficulty": "Moderate",
+          "minAge": 12,
+          "maxGroupSize": 8,
+          "availableDays": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+        },
+        {
+          "id": "mabula-lodge",
+          "name": "Mabula Lodge",
+          "duration": "Full Day",
+          "pickupTime": "07:00",
+          "returnTime": "18:00",
+          "price": {
+            "adult": 1800,
+            "child": 1300,
+            "currency": "ZAR"
+          },
+          "description": "Experience luxury and wildlife at Mabula Lodge with game drives and lodge activities.",
+          "highlights": [
+            "Game drives",
+            "Lodge facilities",
+            "Wildlife viewing",
+            "Luxury accommodation",
+            "Gourmet dining"
+          ],
+          "inclusions": [
+            "Professional guide",
+            "Transportation",
+            "Lodge access",
+            "Game drive",
+            "Lunch"
+          ],
+          "exclusions": [
+            "Personal expenses",
+            "Gratuities"
+          ],
+          "location": "Mabula",
+          "category": "Wildlife",
+          "difficulty": "Easy",
+          "minAge": 5,
+          "maxGroupSize": 10,
+          "availableDays": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+        },
+        {
+          "id": "pilanesberg-game-park",
+          "name": "Pilanesberg Game Park",
+          "duration": "Full Day",
+          "pickupTime": "06:00",
+          "returnTime": "19:00",
+          "price": {
+            "adult": 1600,
+            "child": 1200,
+            "currency": "ZAR"
+          },
+          "description": "Explore the Big 5 in their natural habitat at Pilanesberg Game Park with guided game drives.",
+          "highlights": [
+            "Big 5 game viewing",
+            "Guided game drives",
+            "Wildlife photography",
+            "Scenic landscapes",
+            "Bird watching"
+          ],
+          "inclusions": [
+            "Professional guide",
+            "Transportation",
+            "Park entrance",
+            "Game drive",
+            "Lunch"
+          ],
+          "exclusions": [
+            "Personal expenses",
+            "Gratuities"
+          ],
+          "location": "Pilanesberg",
+          "category": "Wildlife",
+          "difficulty": "Easy",
+          "minAge": 5,
+          "maxGroupSize": 12,
+          "availableDays": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+        },
+        {
+          "id": "sun-city",
+          "name": "Sun City",
+          "duration": "Full Day",
+          "pickupTime": "08:00",
+          "returnTime": "18:00",
+          "price": {
+            "adult": 1200,
+            "child": 900,
+            "currency": "ZAR"
+          },
+          "description": "Experience the entertainment capital of South Africa with its world-class facilities and activities.",
+          "highlights": [
+            "Valley of Waves",
+            "Casino entertainment",
+            "Golf courses",
+            "Shopping centers",
+            "Restaurants"
+          ],
+          "inclusions": [
+            "Professional guide",
+            "Transportation",
+            "Resort access"
+          ],
+          "exclusions": [
+            "Activities and attractions",
+            "Food and beverages",
+            "Personal expenses",
+            "Gratuities"
+          ],
+          "location": "Sun City",
+          "category": "Entertainment",
+          "difficulty": "Easy",
+          "minAge": 3,
+          "maxGroupSize": 15,
+          "availableDays": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+        }
+      ]
+    },
+    "tourPackages": {
+      "title": "Tour Packages",
+      "description": "Multi-day experiences showcasing South Africa's diverse landscapes and wildlife",
+      "packages": [
+        {
+          "id": "pilanesberg-wildlife",
+          "name": "Pilanesberg Game Park Wildlife Experience",
+          "duration": "2 Nights / 3 Days",
+          "price": {
+            "perPerson": 4500,
+            "currency": "ZAR",
+            "singleSupplement": 1200
+          },
+          "description": "Immerse yourself in the Big 5 wildlife experience at Pilanesberg Game Park with luxury accommodation and guided game drives.",
+          "itinerary": [
+            {
+              "day": 1,
+              "title": "Arrival and Welcome",
+              "activities": [
+                "Pickup from Johannesburg",
+                "Transfer to Pilanesberg",
+                "Check-in at lodge",
+                "Welcome dinner",
+                "Evening game drive"
+              ],
+              "meals": ["Dinner"],
+              "accommodation": "Luxury lodge in Pilanesberg"
+            },
+            {
+              "day": 2,
+              "title": "Wildlife Safari Day",
+              "activities": [
+                "Early morning game drive",
+                "Breakfast at lodge",
+                "Leisure time",
+                "Afternoon game drive",
+                "Sundowner drinks"
+              ],
+              "meals": ["Breakfast", "Lunch", "Dinner"],
+              "accommodation": "Luxury lodge in Pilanesberg"
+            },
+            {
+              "day": 3,
+              "title": "Departure",
+              "activities": [
+                "Final morning game drive",
+                "Breakfast",
+                "Transfer back to Johannesburg"
+              ],
+              "meals": ["Breakfast"],
+              "accommodation": "N/A"
+            }
+          ],
+          "inclusions": [
+            "Luxury lodge accommodation",
+            "All meals",
+            "Guided game drives",
+            "Professional guide",
+            "Transportation",
+            "Park entrance fees",
+            "Sundowner drinks"
+          ],
+          "exclusions": [
+            "International flights",
+            "Travel insurance",
+            "Personal expenses",
+            "Gratuities",
+            "Optional activities"
+          ],
+          "location": "Pilanesberg",
+          "category": "Wildlife",
+          "difficulty": "Easy",
+          "minAge": 5,
+          "maxGroupSize": 8,
+          "availableMonths": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+        },
+        {
+          "id": "madikwe-wildlife",
+          "name": "Madikwe Game Park Wildlife Experience",
+          "duration": "2 Nights / 3 Days",
+          "price": {
+            "perPerson": 5200,
+            "currency": "ZAR",
+            "singleSupplement": 1400
+          },
+          "description": "Experience the exclusive Madikwe Game Park with its diverse wildlife and luxury safari lodges.",
+          "itinerary": [
+            {
+              "day": 1,
+              "title": "Arrival and Safari",
+              "activities": [
+                "Pickup from Johannesburg",
+                "Transfer to Madikwe",
+                "Check-in at lodge",
+                "Afternoon game drive",
+                "Dinner under the stars"
+              ],
+              "meals": ["Dinner"],
+              "accommodation": "Luxury lodge in Madikwe"
+            },
+            {
+              "day": 2,
+              "title": "Full Safari Day",
+              "activities": [
+                "Early morning game drive",
+                "Breakfast",
+                "Leisure time",
+                "Afternoon game drive",
+                "Bush dinner"
+              ],
+              "meals": ["Breakfast", "Lunch", "Dinner"],
+              "accommodation": "Luxury lodge in Madikwe"
+            },
+            {
+              "day": 3,
+              "title": "Final Safari",
+              "activities": [
+                "Final morning game drive",
+                "Breakfast",
+                "Transfer back to Johannesburg"
+              ],
+              "meals": ["Breakfast"],
+              "accommodation": "N/A"
+            }
+          ],
+          "inclusions": [
+            "Luxury lodge accommodation",
+            "All meals",
+            "Guided game drives",
+            "Professional guide",
+            "Transportation",
+            "Park entrance fees",
+            "Bush dinner experience"
+          ],
+          "exclusions": [
+            "International flights",
+            "Travel insurance",
+            "Personal expenses",
+            "Gratuities",
+            "Optional activities"
+          ],
+          "location": "Madikwe",
+          "category": "Wildlife",
+          "difficulty": "Easy",
+          "minAge": 5,
+          "maxGroupSize": 8,
+          "availableMonths": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+        },
+        {
+          "id": "kruger-panorama",
+          "name": "Kruger National Park & Panorama Route",
+          "duration": "3 Nights / 4 Days",
+          "price": {
+            "perPerson": 6800,
+            "currency": "ZAR",
+            "singleSupplement": 1800
+          },
+          "description": "Combine the iconic Kruger National Park with the scenic Panorama Route for an unforgettable South African experience.",
+          "itinerary": [
+            {
+              "day": 1,
+              "title": "Journey to Kruger",
+              "activities": [
+                "Pickup from Johannesburg",
+                "Scenic drive to Kruger",
+                "Check-in at lodge",
+                "Evening game drive"
+              ],
+              "meals": ["Dinner"],
+              "accommodation": "Luxury lodge in Kruger"
+            },
+            {
+              "day": 2,
+              "title": "Kruger Safari Day",
+              "activities": [
+                "Early morning game drive",
+                "Breakfast",
+                "Full day safari",
+                "Sundowner drinks"
+              ],
+              "meals": ["Breakfast", "Lunch", "Dinner"],
+              "accommodation": "Luxury lodge in Kruger"
+            },
+            {
+              "day": 3,
+              "title": "Panorama Route",
+              "activities": [
+                "Breakfast",
+                "Panorama Route tour",
+                "Blyde River Canyon",
+                "God's Window",
+                "Three Rondavels"
+              ],
+              "meals": ["Breakfast", "Lunch", "Dinner"],
+              "accommodation": "Luxury lodge in Kruger"
+            },
+            {
+              "day": 4,
+              "title": "Final Safari",
+              "activities": [
+                "Final morning game drive",
+                "Breakfast",
+                "Transfer back to Johannesburg"
+              ],
+              "meals": ["Breakfast"],
+              "accommodation": "N/A"
+            }
+          ],
+          "inclusions": [
+            "Luxury lodge accommodation",
+            "All meals",
+            "Guided game drives",
+            "Panorama Route tour",
+            "Professional guide",
+            "Transportation",
+            "Park entrance fees"
+          ],
+          "exclusions": [
+            "International flights",
+            "Travel insurance",
+            "Personal expenses",
+            "Gratuities",
+            "Optional activities"
+          ],
+          "location": "Kruger National Park & Panorama Route",
+          "category": "Wildlife & Scenic",
+          "difficulty": "Easy",
+          "minAge": 5,
+          "maxGroupSize": 8,
+          "availableMonths": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+        },
+        {
+          "id": "triland-route",
+          "name": "Triland Route Experience",
+          "duration": "7 Days / 6 Nights",
+          "price": {
+            "perPerson": 15000,
+            "currency": "ZAR",
+            "singleSupplement": 3500
+          },
+          "description": "Experience the ultimate South African journey covering Johannesburg, Sun City, and Kruger National Park in one comprehensive package.",
+          "itinerary": [
+            {
+              "day": 1,
+              "title": "Johannesburg Arrival",
+              "activities": [
+                "Airport pickup",
+                "City orientation",
+                "Welcome dinner"
+              ],
+              "meals": ["Dinner"],
+              "accommodation": "Johannesburg hotel"
+            },
+            {
+              "day": 2,
+              "title": "Sun City Adventure",
+              "activities": [
+                "Transfer to Sun City",
+                "Valley of Waves",
+                "Casino entertainment",
+                "Golf or spa options"
+              ],
+              "meals": ["Breakfast", "Lunch", "Dinner"],
+              "accommodation": "Sun City resort"
+            },
+            {
+              "day": 3,
+              "title": "Sun City to Kruger",
+              "activities": [
+                "Sun City activities",
+                "Transfer to Kruger",
+                "Evening game drive"
+              ],
+              "meals": ["Breakfast", "Lunch", "Dinner"],
+              "accommodation": "Kruger lodge"
+            },
+            {
+              "day": 4,
+              "title": "Kruger Safari",
+              "activities": [
+                "Early morning game drive",
+                "Full day safari",
+                "Sundowner drinks"
+              ],
+              "meals": ["Breakfast", "Lunch", "Dinner"],
+              "accommodation": "Kruger lodge"
+            },
+            {
+              "day": 5,
+              "title": "Kruger Safari",
+              "activities": [
+                "Morning game drive",
+                "Afternoon game drive",
+                "Bush dinner"
+              ],
+              "meals": ["Breakfast", "Lunch", "Dinner"],
+              "accommodation": "Kruger lodge"
+            },
+            {
+              "day": 6,
+              "title": "Panorama Route",
+              "activities": [
+                "Panorama Route tour",
+                "Blyde River Canyon",
+                "God's Window",
+                "Three Rondavels"
+              ],
+              "meals": ["Breakfast", "Lunch", "Dinner"],
+              "accommodation": "Kruger lodge"
+            },
+            {
+              "day": 7,
+              "title": "Departure",
+              "activities": [
+                "Final morning game drive",
+                "Transfer to airport"
+              ],
+              "meals": ["Breakfast"],
+              "accommodation": "N/A"
+            }
+          ],
+          "inclusions": [
+            "All accommodation",
+            "All meals",
+            "Guided game drives",
+            "Panorama Route tour",
+            "Professional guide",
+            "Transportation",
+            "Park entrance fees",
+            "Airport transfers"
+          ],
+          "exclusions": [
+            "International flights",
+            "Travel insurance",
+            "Personal expenses",
+            "Gratuities",
+            "Optional activities"
+          ],
+          "location": "Johannesburg, Sun City, Kruger National Park",
+          "category": "Multi-Destination",
+          "difficulty": "Easy",
+          "minAge": 5,
+          "maxGroupSize": 8,
+          "availableMonths": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+        }
+      ]
+    },
+    "customTours": {
+      "title": "Custom Multi-City Tours",
+      "description": "Tailor-made experiences designed to your specific requirements and preferences",
+      "tours": [
+        {
+          "id": "multi-city-standard",
+          "name": "Standard Multi-City Experience",
+          "duration": "Customizable",
+          "price": {
+            "startingFrom": 8000,
+            "currency": "ZAR",
+            "customizable": true
+          },
+          "description": "Our signature multi-city tour covering Johannesburg, Sun City, wildlife reserves, and Cape Town with full customization options.",
+          "destinations": [
+            "Johannesburg",
+            "Sun City",
+            "Mabula or Kruger National Park",
+            "Cape Town"
+          ],
+          "highlights": [
+            "City exploration",
+            "Wildlife experiences",
+            "Scenic landscapes",
+            "Cultural immersion",
+            "Luxury accommodation"
+          ],
+          "customizationOptions": [
+            "Duration flexibility",
+            "Accommodation preferences",
+            "Activity selection",
+            "Transportation options",
+            "Special dietary requirements"
+          ],
+          "inclusions": [
+            "All accommodation",
+            "Transportation between cities",
+            "Professional guide",
+            "Airport transfers",
+            "Customized activities"
+          ],
+          "exclusions": [
+            "International flights",
+            "Travel insurance",
+            "Personal expenses",
+            "Optional activities"
+          ],
+          "location": "Multiple cities across South Africa",
+          "category": "Custom",
+          "difficulty": "Easy",
+          "minAge": 5,
+          "maxGroupSize": 12,
+          "bookingLeadTime": "4-6 weeks"
+        }
+      ]
+    },
+    "airportTransfers": {
+      "title": "Airport Transfers",
+      "description": "Reliable and comfortable airport transfer services across South Africa",
+      "services": [
+        {
+          "id": "johannesburg-airport",
+          "name": "Johannesburg Airport Transfers",
+          "locations": ["OR Tambo International Airport", "Lanseria International Airport"],
+          "destinations": ["Johannesburg", "Pretoria", "Sandton", "Rosebank"],
+          "price": {
+            "oneWay": 450,
+            "return": 800,
+            "currency": "ZAR"
+          },
+          "vehicleTypes": [
+            {
+              "type": "Sedan",
+              "capacity": "1-3 passengers",
+              "price": 450
+            },
+            {
+              "type": "SUV",
+              "capacity": "1-6 passengers",
+              "price": 650
+            },
+            {
+              "type": "Minibus",
+              "capacity": "1-12 passengers",
+              "price": 1200
+            }
+          ],
+          "features": [
+            "Meet and greet service",
+            "Flight monitoring",
+            "Professional drivers",
+            "Air-conditioned vehicles",
+            "Luggage assistance"
+          ],
+          "availableHours": "24/7",
+          "bookingLeadTime": "2 hours minimum"
+        },
+        {
+          "id": "cape-town-airport",
+          "name": "Cape Town Airport Transfers",
+          "locations": ["Cape Town International Airport"],
+          "destinations": ["Cape Town City", "Camps Bay", "Hout Bay", "Stellenbosch"],
+          "price": {
+            "oneWay": 550,
+            "return": 1000,
+            "currency": "ZAR"
+          },
+          "vehicleTypes": [
+            {
+              "type": "Sedan",
+              "capacity": "1-3 passengers",
+              "price": 550
+            },
+            {
+              "type": "SUV",
+              "capacity": "1-6 passengers",
+              "price": 750
+            },
+            {
+              "type": "Minibus",
+              "capacity": "1-12 passengers",
+              "price": 1400
+            }
+          ],
+          "features": [
+            "Meet and greet service",
+            "Flight monitoring",
+            "Professional drivers",
+            "Air-conditioned vehicles",
+            "Luggage assistance"
+          ],
+          "availableHours": "24/7",
+          "bookingLeadTime": "2 hours minimum"
+        }
+      ]
+    },
+    "visaServices": {
+      "title": "Visa Services",
+      "description": "Professional visa application assistance with TTOS registration",
+      "services": [
+        {
+          "id": "visa-application",
+          "name": "Visa Application Assistance",
+          "description": "Complete visa application support for South Africa and neighboring countries",
+          "processingTime": "2-5 working days",
+          "price": {
+            "consultation": 200,
+            "application": 800,
+            "currency": "ZAR"
+          },
+          "services": [
+            "Visa consultation",
+            "Application preparation",
+            "Document verification",
+            "Submission assistance",
+            "Status tracking"
+          ],
+          "supportedCountries": [
+            "South Africa",
+            "Botswana",
+            "Namibia",
+            "Zimbabwe",
+            "Mozambique"
+          ],
+          "requirements": [
+            "Valid passport",
+            "Recent photographs",
+            "Travel itinerary",
+            "Proof of accommodation",
+            "Financial statements"
+          ],
+          "ttosRegistration": "TTOS Registered Tour Operator",
+          "availableHours": "Monday - Friday, 08:00 - 17:00"
+        }
+      ]
+    }
+  },
+  "booking": {
+    "process": {
+      "steps": [
+        "Select service",
+        "Choose dates",
+        "Provide passenger details",
+        "Add optional services",
+        "Review and confirm",
+        "Payment",
+        "Confirmation"
+      ],
+      "requiredFields": [
+        "Full name",
+        "Email address",
+        "Phone number",
+        "Travel dates",
+        "Number of passengers",
+        "Pickup location"
+      ],
+      "optionalServices": [
+        "Airport transfers",
+        "Visa services",
+        "Travel insurance",
+        "Photography services"
+      ]
+    },
+    "contact": {
+      "primary": "WhatsApp",
+      "whatsapp": "+27 82 123 4567",
+      "email": "bookings@fhulufhelotours.co.za",
+      "phone": "+27 11 234 5678",
+      "responseTime": "Within 2 hours during business hours"
+    },
+    "payment": {
+      "methods": [
+        "Bank transfer",
+        "Credit card",
+        "PayPal",
+        "Cash on arrival"
+      ],
+      "deposit": "30% deposit required",
+      "balance": "Balance due 7 days before travel"
+    }
+  },
+  "seasons": {
+    "peak": ["December", "January", "February", "March", "April"],
+    "shoulder": ["May", "June", "September", "October"],
+    "low": ["July", "August", "November"],
+    "recommendations": {
+      "wildlife": "May to September (dry season)",
+      "beach": "November to March (summer)",
+      "cultural": "Year-round",
+      "adventure": "March to November"
+    }
+  },
+  "locations": {
+    "cities": [
+      {
+        "name": "Johannesburg",
+        "description": "The economic hub of South Africa",
+        "highlights": ["Apartheid Museum", "Soweto", "Gold Reef City", "Constitution Hill"]
+      },
+      {
+        "name": "Pretoria",
+        "description": "The administrative capital",
+        "highlights": ["Union Buildings", "Voortrekker Monument", "Freedom Park"]
+      },
+      {
+        "name": "Cape Town",
+        "description": "The Mother City",
+        "highlights": ["Table Mountain", "Robben Island", "V&A Waterfront", "Cape Point"]
+      },
+      {
+        "name": "Sun City",
+        "description": "Entertainment capital",
+        "highlights": ["Valley of Waves", "Casino", "Golf courses", "Luxury resorts"]
+      }
+    ],
+    "parks": [
+      {
+        "name": "Kruger National Park",
+        "description": "South Africa's premier wildlife destination",
+        "highlights": ["Big 5", "Diverse wildlife", "Scenic landscapes"]
+      },
+      {
+        "name": "Pilanesberg Game Park",
+        "description": "Malaria-free wildlife experience",
+        "highlights": ["Big 5", "Scenic beauty", "Luxury lodges"]
+      },
+      {
+        "name": "Madikwe Game Park",
+        "description": "Exclusive wildlife experience",
+        "highlights": ["Big 5", "Luxury lodges", "Exclusive access"]
+      }
+    ]
+  }
+} 

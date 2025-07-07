@@ -1,0 +1,371 @@
+"use client"
+
+import type React from "react"
+
+import { useState, useRef, useEffect } from "react"
+import { ChevronLeft, ChevronRight, Clock, Users, MapPin } from "lucide-react"
+import { Button } from "@/components/ui/button"
+
+const tours = [
+  {
+    id: 1,
+    title: "Soweto Tour",
+    category: "Day Tours",
+    duration: "6 hours",
+    groupSize: "8-12 people",
+    location: "Soweto, Johannesburg",
+    image: "/placeholder.svg?height=600&width=400",
+    description: "Experience the vibrant culture and rich history of Soweto",
+  },
+  {
+    id: 2,
+    title: "Johannesburg Inner City Tour",
+    category: "Day Tours",
+    duration: "4 hours",
+    groupSize: "6-10 people",
+    location: "Johannesburg CBD",
+    image: "/placeholder.svg?height=600&width=400",
+    description: "Discover the heart of Johannesburg's urban landscape",
+  },
+  {
+    id: 3,
+    title: "Gold Reef City & Theme Park",
+    category: "Day Tours",
+    duration: "8 hours",
+    groupSize: "4-15 people",
+    location: "Gold Reef City",
+    image: "/placeholder.svg?height=600&width=400",
+    description: "Fun-filled adventure at South Africa's premier theme park",
+  },
+  {
+    id: 4,
+    title: "Apartheid Museum",
+    category: "Day Tours",
+    duration: "3 hours",
+    groupSize: "5-12 people",
+    location: "Johannesburg",
+    image: "/placeholder.svg?height=600&width=400",
+    description: "Journey through South Africa's complex history",
+  },
+  {
+    id: 5,
+    title: "Pretoria City Tour",
+    category: "Day Tours",
+    duration: "5 hours",
+    groupSize: "6-10 people",
+    location: "Pretoria",
+    image: "/placeholder.svg?height=600&width=400",
+    description: "Explore the administrative capital's landmarks",
+  },
+  {
+    id: 6,
+    title: "Cullinan Diamond Mine",
+    category: "Adventure Tours",
+    duration: "7 hours",
+    groupSize: "8-15 people",
+    location: "Cullinan",
+    image: "/placeholder.svg?height=600&width=400",
+    description: "Discover the world's largest diamond mine",
+  },
+  {
+    id: 7,
+    title: "Lion and Cheetah Sanctuary",
+    category: "Adventure Tours",
+    duration: "6 hours",
+    groupSize: "6-12 people",
+    location: "Hartbeespoort",
+    image: "/placeholder.svg?height=600&width=400",
+    description: "Get up close with Africa's magnificent big cats",
+  },
+  {
+    id: 8,
+    title: "Elephant Sanctuary",
+    category: "Adventure Tours",
+    duration: "5 hours",
+    groupSize: "8-14 people",
+    location: "Hartbeespoort",
+    image: "/placeholder.svg?height=600&width=400",
+    description: "Interact with gentle giants in their natural habitat",
+  },
+  {
+    id: 9,
+    title: "Ukuthula Lion Walk",
+    category: "Adventure Tours",
+    duration: "4 hours",
+    groupSize: "4-8 people",
+    location: "Brits",
+    image: "/placeholder.svg?height=600&width=400",
+    description: "Walk alongside lions in this unique experience",
+  },
+  {
+    id: 10,
+    title: "Mabula Lodge",
+    category: "Adventure Tours",
+    duration: "2 days",
+    groupSize: "6-16 people",
+    location: "Limpopo Province",
+    image: "/placeholder.svg?height=600&width=400",
+    description: "Luxury safari experience in the African bush",
+  },
+  {
+    id: 11,
+    title: "Pilanesberg Game Park",
+    category: "Adventure Tours",
+    duration: "8 hours",
+    groupSize: "8-15 people",
+    location: "North West Province",
+    image: "/placeholder.svg?height=600&width=400",
+    description: "Big Five safari in an ancient volcanic crater",
+  },
+  {
+    id: 12,
+    title: "Sun City",
+    category: "Adventure Tours",
+    duration: "Full day",
+    groupSize: "6-20 people",
+    location: "North West Province",
+    image: "/placeholder.svg?height=600&width=400",
+    description: "Entertainment capital with casinos and water parks",
+  },
+]
+
+export default function ToursSection() {
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [isTransitioning, setIsTransitioning] = useState(false)
+  const scrollContainerRef = useRef<HTMLDivElement>(null)
+  const touchStartX = useRef(0)
+  const touchEndX = useRef(0)
+
+  const nextSlide = () => {
+    if (isTransitioning) return
+    setIsTransitioning(true)
+    const nextIndex = currentIndex < tours.length - 1 ? currentIndex + 1 : 0
+    scrollToIndex(nextIndex)
+  }
+
+  const prevSlide = () => {
+    if (isTransitioning) return
+    setIsTransitioning(true)
+    const prevIndex = currentIndex > 0 ? currentIndex - 1 : tours.length - 1
+    scrollToIndex(prevIndex)
+  }
+
+  const scrollToIndex = (index: number) => {
+    if (!scrollContainerRef.current) return
+
+    const container = scrollContainerRef.current
+    const cardWidth = container.children[0]?.clientWidth || 0
+    const gap = 20 // 1.25rem gap for better spacing
+
+    container.scrollTo({
+      left: (cardWidth + gap) * index,
+      behavior: "smooth",
+    })
+
+    setCurrentIndex(index)
+    setTimeout(() => setIsTransitioning(false), 500)
+  }
+
+  const handleScroll = () => {
+    if (!scrollContainerRef.current || isTransitioning) return
+
+    const container = scrollContainerRef.current
+    const cardWidth = container.children[0]?.clientWidth || 0
+    const gap = 20
+    const scrollLeft = container.scrollLeft
+    const newIndex = Math.round(scrollLeft / (cardWidth + gap))
+
+    if (newIndex !== currentIndex && newIndex >= 0 && newIndex < tours.length) {
+      setCurrentIndex(newIndex)
+    }
+  }
+
+  // Touch handlers for mobile swipe
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.targetTouches[0].clientX
+  }
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.targetTouches[0].clientX
+  }
+
+  const handleTouchEnd = () => {
+    if (!touchStartX.current || !touchEndX.current) return
+
+    const distance = touchStartX.current - touchEndX.current
+    const isLeftSwipe = distance > 50
+    const isRightSwipe = distance < -50
+
+    if (isLeftSwipe) {
+      nextSlide()
+    } else if (isRightSwipe) {
+      prevSlide()
+    }
+  }
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "ArrowLeft") {
+        prevSlide()
+      } else if (e.key === "ArrowRight") {
+        nextSlide()
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown)
+    return () => window.removeEventListener("keydown", handleKeyDown)
+  }, [currentIndex])
+
+  useEffect(() => {
+    const container = scrollContainerRef.current
+    if (!container) return
+
+    container.addEventListener("scroll", handleScroll)
+    return () => container.removeEventListener("scroll", handleScroll)
+  }, [currentIndex, isTransitioning])
+
+  return (
+    <section className="py-16 lg:py-24 bg-white">
+      {/* Industry Standard Container */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header - Responsive Positioning */}
+        <div className="mb-8 lg:mb-16">
+          <div className="flex items-start justify-between gap-4">
+            <div className="flex-1">
+              <span className="inline-block px-3 py-1 bg-slate-100 text-slate-700 text-sm font-medium rounded-full mb-3">
+                Featured Tours
+              </span>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-slate-900 mb-2 lg:mb-3 tracking-tight leading-tight">
+                Experience the Magic
+              </h2>
+              <p className="text-sm sm:text-base lg:text-lg text-slate-600 font-light leading-relaxed max-w-2xl">
+                Carefully curated adventures that showcase the very best of South Africa
+              </p>
+            </div>
+
+            {/* Navigation Controls - Responsive */}
+            <div className="flex items-center gap-2 lg:gap-3 flex-shrink-0">
+              {/* Hide arrows on mobile, show on desktop */}
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={prevSlide}
+                disabled={isTransitioning}
+                className="hidden lg:flex rounded-full border-slate-200 hover:bg-slate-50 w-10 h-10 bg-transparent"
+              >
+                <ChevronLeft className="w-4 h-4" />
+              </Button>
+
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={nextSlide}
+                disabled={isTransitioning}
+                className="hidden lg:flex rounded-full border-slate-200 hover:bg-slate-50 w-10 h-10 bg-transparent"
+              >
+                <ChevronRight className="w-4 h-4" />
+              </Button>
+
+              {/* Counter - Show on all devices */}
+              <div className="flex items-center gap-1 bg-slate-50 px-3 py-1.5 rounded-full text-sm">
+                <span className="text-slate-900 font-medium">{currentIndex + 1}</span>
+                <span className="text-slate-400">/</span>
+                <span className="text-slate-600">{tours.length}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Tours Carousel - Optimized for Mobile Scrolling */}
+        <div className="relative">
+          <div
+            ref={scrollContainerRef}
+            className="flex gap-5 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4 -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8"
+            style={{
+              scrollbarWidth: "none",
+              msOverflowStyle: "none",
+              WebkitOverflowScrolling: "touch", // Smooth scrolling on iOS
+            }}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
+            {tours.map((tour) => (
+              <div
+                key={tour.id}
+                className="flex-none w-[280px] sm:w-[320px] lg:w-[340px] xl:w-[360px] max-w-[360px] snap-center"
+              >
+                <div className="group relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                  <div className="aspect-[4/5] relative overflow-hidden">
+                    <img
+                      src={tour.image || "/placeholder.svg"}
+                      alt={tour.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+
+                    {/* Category Badge */}
+                    <div className="absolute top-4 left-4">
+                      <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-slate-900 text-xs font-medium rounded-full">
+                        {tour.category}
+                      </span>
+                    </div>
+
+                    {/* Content Overlay */}
+                    <div className="absolute bottom-0 left-0 right-0 p-6">
+                      <div className="flex items-center gap-2 mb-2">
+                        <div className="flex items-center gap-1 text-white/80 text-xs">
+                          <MapPin className="w-3 h-3" />
+                          <span>{tour.location}</span>
+                        </div>
+                      </div>
+
+                      <h3 className="text-xl font-medium text-white mb-2 leading-tight">{tour.title}</h3>
+                      <p className="text-white/90 text-sm mb-4 leading-relaxed font-light">{tour.description}</p>
+
+                      {/* Duration, Group Size, and Book Button on Same Line */}
+                      <div className="flex items-center justify-between gap-2">
+                        <div className="flex items-center gap-3 text-white/80 text-xs">
+                          <div className="flex items-center gap-1">
+                            <Clock className="w-3 h-3" />
+                            <span>{tour.duration}</span>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <Users className="w-3 h-3" />
+                            <span>{tour.groupSize}</span>
+                          </div>
+                        </div>
+
+                        <Button
+                          size="sm"
+                          className="bg-white text-slate-900 hover:bg-white/90 px-4 py-2 rounded-full text-xs font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex-shrink-0"
+                        >
+                          Book Tour
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Dots Indicator - Centered */}
+          <div className="flex justify-center gap-2 mt-6">
+            {tours.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => scrollToIndex(index)}
+                disabled={isTransitioning}
+                className={`h-1.5 rounded-full transition-all duration-300 ${
+                  index === currentIndex ? "bg-slate-900 w-6" : "bg-slate-300 hover:bg-slate-400 w-1.5"
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
