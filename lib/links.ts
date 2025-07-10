@@ -5,6 +5,8 @@
  * Links are organized by category and include both internal routes and external URLs.
  */
 
+import { dayTours, tourPackages, company } from "@/data/packages"
+
 // Main navigation links for the header
 export const NAVIGATION_LINKS = {
   // Primary service categories
@@ -80,98 +82,24 @@ export const FOOTER_LINKS = {
     ]
   },
 
-  // Popular day tours
+  // Popular day tours - dynamically generated from packages.ts
   popularDayTours: {
     title: 'Popular Day Tours',
-    links: [
-      {
-        label: 'Soweto Tour',
-        href: '/services/day-tours/soweto-tour',
-        description: 'Explore the vibrant township'
-      },
-      {
-        label: 'Johannesburg Inner City',
-        href: '/services/day-tours/johannesburg-inner-city',
-        description: 'Discover the city center'
-      },
-      {
-        label: 'Gold Reef City',
-        href: '/services/day-tours/gold-reef-city',
-        description: 'Theme park and gold mine experience'
-      },
-      {
-        label: 'Apartheid Museum',
-        href: '/services/day-tours/apartheid-museum',
-        description: 'Historical significance tour'
-      },
-      {
-        label: 'Pretoria City Tour',
-        href: '/services/day-tours/pretoria-city-tour',
-        description: 'Administrative capital exploration'
-      },
-      {
-        label: 'Cullinan Diamond Mine',
-        href: '/services/day-tours/cullinan-diamond-mine',
-        description: 'Diamond mine experience'
-      },
-      {
-        label: 'Lion and Cheetah Sanctuary',
-        href: '/services/day-tours/lion-cheetah-sanctuary',
-        description: 'Wildlife sanctuary visit'
-      },
-      {
-        label: 'Elephant Sanctuary',
-        href: '/services/day-tours/elephant-sanctuary',
-        description: 'Elephant interaction experience'
-      },
-      {
-        label: 'Ukuthula Lion Walk',
-        href: '/services/day-tours/ukuthula-lion-walk',
-        description: 'Lion walking experience'
-      },
-      {
-        label: 'Mabula Lodge',
-        href: '/services/day-tours/mabula-lodge',
-        description: 'Luxury lodge experience'
-      },
-      {
-        label: 'Pilanesberg Game Park',
-        href: '/services/day-tours/pilanesberg-game-park',
-        description: 'Wildlife game drive'
-      },
-      {
-        label: 'Sun City',
-        href: '/services/day-tours/sun-city',
-        description: 'Entertainment complex tour'
-      }
-    ]
+    links: dayTours.slice(0, 12).map(tour => ({
+      label: tour.name,
+      href: `/day-tours/${tour.id}`,
+      description: tour.description
+    }))
   },
 
-  // Tour packages
+  // Tour packages - dynamically generated from packages.ts
   tourPackages: {
     title: 'Tour Packages',
-    links: [
-      {
-        label: 'Pilanesberg Wildlife Experience',
-        href: '/services/tour-packages/pilanesberg-wildlife',
-        description: '2 nights wildlife package'
-      },
-      {
-        label: 'Madikwe Wildlife Experience',
-        href: '/services/tour-packages/madikwe-wildlife',
-        description: '2 nights game park package'
-      },
-      {
-        label: 'Kruger National Park & Panorama',
-        href: '/services/tour-packages/kruger-panorama',
-        description: '3 nights safari experience'
-      },
-      {
-        label: 'Triland Route Experience',
-        href: '/services/tour-packages/triland-route',
-        description: '7 days multi-destination tour'
-      }
-    ]
+    links: tourPackages.map(pkg => ({
+      label: pkg.name,
+      href: `/packages/${pkg.id}`,
+      description: pkg.description
+    }))
   },
 
   // Company information
@@ -181,7 +109,7 @@ export const FOOTER_LINKS = {
       {
         label: 'About Us',
         href: '/about',
-        description: '25 years of tourism experience'
+        description: `${company.experience.years} years of tourism experience`
       },
       {
         label: 'TTOS Registration',
@@ -191,7 +119,7 @@ export const FOOTER_LINKS = {
       {
         label: 'Visa Services',
         href: '/services/visa-services',
-        description: '2-5 working days processing'
+        description: company.credentials.processingTime
       },
       {
         label: 'Contact Us',
