@@ -16,19 +16,19 @@ import WhatsAppButton from "@/components/whatsapp-button"
 import { SwipeableGallery } from "@/components/swipeable-gallery"
 import { dayTours } from "@/data/packages"
 import { use } from "react"
+
 export default function DayTourDetailPage({ params }: { params: Promise<{ id: string }> }) {
 
   const { id } = use(params)
 
   function getDayTourById(id: string) {
     const tour = (dayTours as Array<any>).find((tour) => tour.id === id)
-    if (!tour) throw new Error("Tour not found")
     return tour
   }
 
   const tour = getDayTourById(id)
 
-  console.log(tour)
+  console.log(tour, id)
 
 
   return (

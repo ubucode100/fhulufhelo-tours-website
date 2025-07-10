@@ -6,10 +6,11 @@ import { useState, useRef, useEffect } from "react"
 import { ChevronLeft, ChevronRight, Clock, Users, MapPin } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { dayTours } from "@/data/packages"
+import Link from "next/link"
 
 // Transform day tours into unified format
 const tours = dayTours.map((tour, index) => ({
-  id: index + 1,
+  id: tour.id,
   title: tour.name,
   category: tour.category,
   duration: tour.duration,
@@ -129,7 +130,7 @@ export default function ToursSection() {
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-slate-900 mb-2 lg:mb-3 tracking-tight leading-tight">
                 Experience the Magic
               </h2>
-              <p className="text-sm sm:text-base lg:text-lg text-slate-600 font-light leading-relaxed max-w-2xl">
+              <p className="text-sm sm:text-base lg:text-lg text-slate-600 font-normal leading-relaxed max-w-2xl">
                 Carefully curated adventures that showcase the very best of South Africa
               </p>
             </div>
@@ -175,7 +176,7 @@ export default function ToursSection() {
             style={{
               scrollbarWidth: "none",
               msOverflowStyle: "none",
-              WebkitOverflowScrolling: "touch", // Smooth scrolling on iOS
+              WebkitOverflowScrolling: "touch",
             }}
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
@@ -186,7 +187,16 @@ export default function ToursSection() {
                 key={tour.id}
                 className="flex-none w-[280px] sm:w-[320px] lg:w-[340px] xl:w-[360px] max-w-[360px] snap-center"
               >
-                <div className="group relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                {/* 
+                  Wrap the card in a Next.js Link for navigation to the tour detail page.
+                  The "Book Tour" button is also a Link for accessibility and clarity.
+                */}
+                <Link
+                  href={`/day-tours/${tour.id}`}
+                  className="group relative block overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 focus:outline-none focus:ring-2 focus:ring-slate-400"
+                  aria-label={`View details for ${tour.title}`}
+                  prefetch={false}
+                >
                   <div className="aspect-[4/5] relative overflow-hidden">
                     <img
                       src={tour.image || "/placeholder.svg"}
@@ -207,7 +217,7 @@ export default function ToursSection() {
                       <div className="flex items-center gap-2 mb-2">
                         <div className="flex items-center gap-1 text-white/80 text-xs">
                           <MapPin className="w-3 h-3" />
-                          <span>{tour.location}</span>
+                          <span>{tour.location}</span> { tour.id }
                         </div>
                       </div>
 
@@ -226,17 +236,19 @@ export default function ToursSection() {
                             <span>{tour.groupSize}</span>
                           </div>
                         </div>
-
-                        <Button
-                          size="sm"
-                          className="bg-white text-slate-900 hover:bg-white/90 px-4 py-2 rounded-full text-xs font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex-shrink-0"
+                        <Link
+                          href={`/day-tours/${tour.id}`}
+                          className="bg-white text-slate-900 hover:bg-white/90 px-4 py-2 rounded-full text-xs font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex-shrink-0 focus:outline-none"
+                          aria-label={`Book ${tour.title}`}
+                          prefetch={false}
+                          onClick={e => e.stopPropagation()}
                         >
                           Book Tour
-                        </Button>
+                        </Link>
                       </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
             ))}
           </div>
