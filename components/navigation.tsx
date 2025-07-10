@@ -1,8 +1,9 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Menu, X, ChevronDown, MessageCircle } from "lucide-react"
+import { Menu, X, ChevronDown, MessageCircle, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { company } from "@/data/packages"
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -121,8 +122,8 @@ export default function Navigation() {
                 <div className="space-y-3 text-sm text-slate-300">
                   <div className="flex items-center gap-2">
                     <span className="font-medium text-white">Call Us:</span>
-                    <a href="tel:+27123456789" className="text-orange-400 hover:text-orange-300">
-                      +27 12 345 6789
+                    <a href={`tel:${company.contact.phone}`} className="text-orange-400 hover:text-orange-300">
+                      {company.contact.phone}
                     </a>
                   </div>
                   <div className="flex items-center gap-2">

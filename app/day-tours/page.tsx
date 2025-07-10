@@ -7,99 +7,7 @@ import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
 import Link from "next/link"
-
-const dayTours = [
-  {
-    id: "soweto-tour",
-    name: "Soweto Tour",
-    description: "Experience the vibrant culture and rich history of Soweto",
-    duration: "6 hours",
-    groupSize: "8-12 people",
-    price: 850,
-    location: "Soweto, Johannesburg",
-    images: [
-      "/placeholder.svg?height=300&width=300",
-      "/placeholder.svg?height=300&width=300",
-      "/placeholder.svg?height=300&width=300",
-      "/placeholder.svg?height=300&width=300",
-    ],
-  },
-  {
-    id: "johannesburg-inner-city",
-    name: "Johannesburg Inner City Tour",
-    description: "Discover the heart of Johannesburg's urban landscape",
-    duration: "4 hours",
-    groupSize: "6-10 people",
-    price: 650,
-    location: "Johannesburg CBD",
-    images: [
-      "/placeholder.svg?height=300&width=300",
-      "/placeholder.svg?height=300&width=300",
-      "/placeholder.svg?height=300&width=300",
-      "/placeholder.svg?height=300&width=300",
-    ],
-  },
-  {
-    id: "gold-reef-city",
-    name: "Gold Reef City",
-    description: "Fun-filled adventure at South Africa's premier theme park",
-    duration: "8 hours",
-    groupSize: "4-15 people",
-    price: 950,
-    location: "Gold Reef City",
-    images: [
-      "/placeholder.svg?height=300&width=300",
-      "/placeholder.svg?height=300&width=300",
-      "/placeholder.svg?height=300&width=300",
-      "/placeholder.svg?height=300&width=300",
-    ],
-  },
-  {
-    id: "apartheid-museum",
-    name: "Apartheid Museum",
-    description: "Journey through South Africa's history and path to democracy",
-    duration: "5 hours",
-    groupSize: "6-15 people",
-    price: 550,
-    location: "Johannesburg",
-    images: [
-      "/placeholder.svg?height=300&width=300",
-      "/placeholder.svg?height=300&width=300",
-      "/placeholder.svg?height=300&width=300",
-      "/placeholder.svg?height=300&width=300",
-    ],
-  },
-  {
-    id: "pretoria-city-tour",
-    name: "Pretoria City Tour",
-    description: "Explore South Africa's administrative capital and its landmarks",
-    duration: "7 hours",
-    groupSize: "8-15 people",
-    price: 750,
-    location: "Pretoria",
-    images: [
-      "/placeholder.svg?height=300&width=300",
-      "/placeholder.svg?height=300&width=300",
-      "/placeholder.svg?height=300&width=300",
-      "/placeholder.svg?height=300&width=300",
-    ],
-  },
-  {
-    id: "lion-cheetah-sanctuary",
-    name: "Lion & Cheetah Sanctuary",
-    description: "Get up close with Africa's magnificent big cats",
-    duration: "8 hours",
-    groupSize: "6-15 people",
-    price: 1100,
-    location: "Hartbeespoort",
-    images: [
-      "/placeholder.svg?height=300&width=300",
-      "/placeholder.svg?height=300&width=300",
-      "/placeholder.svg?height=300&width=300",
-      "/placeholder.svg?height=300&width=300",
-    ],
-  },
-]
+import { dayTours } from "@/data/packages"
 
 function TourCard({ tour }: { tour: (typeof dayTours)[0] }) {
   const [isFavorited, setIsFavorited] = useState(false)
@@ -109,7 +17,7 @@ function TourCard({ tour }: { tour: (typeof dayTours)[0] }) {
       {/* Image Grid - Show ALL images */}
       <div className="relative">
         <div className="grid grid-cols-2 gap-1 p-1">
-          {tour.images.map((image, index) => (
+          {tour.images?.map((image, index) => (
             <div key={index} className="aspect-square relative overflow-hidden rounded-lg">
               <Image
                 src={image || "/placeholder.svg"}
@@ -119,7 +27,17 @@ function TourCard({ tour }: { tour: (typeof dayTours)[0] }) {
                 sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 16vw"
               />
             </div>
-          ))}
+          )) || (
+            <div className="aspect-square relative overflow-hidden rounded-lg">
+              <Image
+                src="/placeholder.svg"
+                alt={`${tour.name} - Image`}
+                fill
+                className="object-cover transition-transform duration-300 group-hover:scale-105"
+                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 16vw"
+              />
+            </div>
+          )}
         </div>
 
         {/* Top Actions */}
@@ -169,13 +87,15 @@ function TourCard({ tour }: { tour: (typeof dayTours)[0] }) {
           </div>
           <div className="flex items-center">
             <Users className="w-4 h-4 mr-1" />
-            <span>{tour.groupSize}</span>
+            <span>{tour.groupSize || `${tour.maxGroupSize} people`}</span>
           </div>
         </div>
 
         {/* Price & Book */}
         <div className="flex items-center justify-between">
-          <div className="text-2xl font-bold text-gray-900">R{tour.price.toLocaleString()}</div>
+          <div className="text-2xl font-bold text-gray-900">
+            R{tour.price?.adult?.toLocaleString() || tour.price?.toLocaleString()}
+          </div>
           <Link href={`/day-tours/${tour.id}`}>
             <Button className="rounded-full bg-gray-900 hover:bg-gray-800 px-6">View Details</Button>
           </Link>

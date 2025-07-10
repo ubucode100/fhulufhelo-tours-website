@@ -12,94 +12,24 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
-import { WhatsAppButton } from "@/components/whatsapp-button"
+import WhatsAppButton from "@/components/whatsapp-button"
 import { SwipeableGallery } from "@/components/swipeable-gallery"
+import { dayTours } from "@/data/packages"
+import { use } from "react"
+export default function DayTourDetailPage({ params }: { params: Promise<{ id: string }> }) {
 
-export default function DayTourDetailPage({ params }: { params: { id: string } }) {
-  // This would normally fetch data based on params.id
-  // For now, using mock data for the specific tour
-  const tour = {
-    id: params.id,
-    name: "Soweto Tour", // This would be dynamic based on ID
-    description:
-      "Experience the vibrant culture and rich history of Soweto, South Africa's most famous township. This immersive tour takes you through the heart of Soweto, where you'll discover the stories of struggle and triumph that shaped modern South Africa. Visit historical landmarks, meet local residents, and experience the authentic spirit of this remarkable community.",
-    duration: "6 hours",
-    groupSize: "8-12 people",
-    price: 850,
-    location: "Soweto, Johannesburg",
-    transport: "Air-conditioned minibus",
-    rating: 4.8,
-    reviewCount: 324,
-    difficulty: "Easy",
-    bestTime: "Year round",
-    highlights: [
-      "Mandela House Museum",
-      "Hector Pieterson Memorial",
-      "Vilakazi Street",
-      "Local shebeen visit",
-      "Traditional lunch",
-      "Orlando Towers",
-    ],
-    inclusions: [
-      "Professional tour guide",
-      "Transportation",
-      "Entrance fees",
-      "Traditional lunch",
-      "Bottled water",
-      "Hotel pickup and drop-off",
-    ],
-    itinerary: [
-      {
-        time: "08:00",
-        title: "Hotel Pickup",
-        description: "Pickup from your Johannesburg hotel and brief orientation about the day ahead",
-      },
-      {
-        time: "09:00",
-        title: "Vilakazi Street",
-        description: "Visit the famous street where both Nelson Mandela and Desmond Tutu lived",
-      },
-      {
-        time: "10:30",
-        title: "Mandela House Museum",
-        description: "Explore the former home of Nelson Mandela, now a museum showcasing his life",
-      },
-      {
-        time: "12:00",
-        title: "Traditional Lunch",
-        description: "Enjoy authentic South African cuisine at a local restaurant",
-      },
-      {
-        time: "13:30",
-        title: "Hector Pieterson Memorial",
-        description: "Learn about the 1976 student uprising and its significance in South African history",
-      },
-      {
-        time: "15:00",
-        title: "Local Community Visit",
-        description: "Meet local residents and experience daily life in Soweto",
-      },
-      {
-        time: "16:00",
-        title: "Return Journey",
-        description: "Return to your hotel with time for reflection and questions",
-      },
-    ],
-    images: [
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-    ],
+  const { id } = use(params)
+
+  function getDayTourById(id: string) {
+    const tour = (dayTours as Array<any>).find((tour) => tour.id === id)
+    if (!tour) throw new Error("Tour not found")
+    return tour
   }
 
-  if (!tour) {
-    return <div>Tour not found</div>
-  }
+  const tour = getDayTourById(id)
+
+  console.log(tour)
+
 
   return (
     <div className="min-h-screen bg-gray-50">
