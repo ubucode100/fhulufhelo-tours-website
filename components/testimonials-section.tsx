@@ -88,16 +88,9 @@ export default function TestimonialsSection() {
 
               {/* Customer Info */}
               <div className="flex items-center gap-4">
-                <img
-                  src={testimonial.image || "/placeholder.svg"}
-                  alt={testimonial.name}
-                  className="w-12 h-12 rounded-full object-cover"
-                />
-                <div>
                   <div className="font-medium text-slate-900">{testimonial.name}</div>
                   <div className="text-sm text-slate-600">{testimonial.location}</div>
-                  <div className="text-xs text-slate-500 mt-1">{testimonial.tour}</div>
-                </div>
+                <div className="text-xs text-slate-500 mt-1">{testimonial.tour}</div>
               </div>
             </div>
           ))}

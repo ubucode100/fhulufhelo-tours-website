@@ -11,7 +11,7 @@ const packages = [
     duration: "2 Nights",
     highlights: ["2x afternoon game drives", "1x morning game drive", "Lunch, Dinners, B&B included"],
     location: "Pilanesberg Game Park",
-    image: "/placeholder.svg?height=800&width=600",
+    image: "/images/packages/Pilanesberg_National_Park_package_1.jpg",
     description:
       "Experience the Big Five in an ancient volcanic crater with luxury accommodation and guided game drives.",
     category: "Wildlife Safari",
@@ -22,7 +22,7 @@ const packages = [
     duration: "2 Nights",
     highlights: ["2x afternoon game drives", "1x morning game drive", "Lunch, Dinners, B&B included"],
     location: "Madikwe Game Park",
-    image: "/placeholder.svg?height=800&width=600",
+    image: "/images/packages/madikwe_game_park_package_1.jpg",
     description:
       "Discover one of South Africa's largest game reserves with exceptional wildlife viewing and luxury lodges.",
     category: "Wildlife Safari",
@@ -39,7 +39,7 @@ const packages = [
       "Lunch, Dinners, B&B included",
     ],
     location: "Kruger National Park & Mpumalanga",
-    image: "/placeholder.svg?height=800&width=600",
+    image: "/images/packages/panorama_route_package_1.jpeg",
     description:
       "Combine world-class wildlife viewing with breathtaking scenic beauty on this comprehensive adventure.",
     category: "Wildlife & Nature",
@@ -55,7 +55,7 @@ const packages = [
       "Three countries in one journey",
     ],
     location: "Mpumalanga, eSwatini & Mozambique",
-    image: "/placeholder.svg?height=800&width=600",
+    image: "/images/packages/triland_route_package_1.jpg",
     description:
       "An extraordinary journey across three countries, experiencing diverse cultures, wildlife, and landscapes.",
     category: "Multi-Country Adventure",
