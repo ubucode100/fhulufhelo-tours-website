@@ -1,10 +1,9 @@
 "use client"
 
 import { BadgeCheck } from "lucide-react"
-import { Badge } from "./ui/badge"
 
 const trustStats = [
-  {
+  { 
     number: "25+",
     label: "Years of Excellence",
     description: "Trusted South African tour operator since 1999",

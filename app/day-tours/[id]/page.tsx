@@ -1,12 +1,12 @@
 "use client"
 
-import { MapPin, Calendar, Users, Clock, Award, Car, Home, Link } from "lucide-react"
+import {  Calendar, Users, Clock, Award, Car, Home, Link } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import {
   Breadcrumb,
   BreadcrumbItem,
-  BreadcrumbLink,
+  BreadcrumbLink, 
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
@@ -79,65 +79,39 @@ export default function DayTourDetailPage({ params }: { params: Promise<{ id: st
     <div className="min-h-screen">
       {/* Hero Section with Background Image */}
       <section
-        className="relative h-[40vh] flex items-center justify-center"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url(${tour.images[0]})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }}
+        className="relative pt-34 flex items-center justify-center"
+       
       >
         {/* Breadcrumb Navigation - Positioned at top */}
-        <div className="absolute top-18 left-0 right-0 z-10">
+        <div className="absolute top-24 left-0 right-0 z-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Breadcrumb>
-              <BreadcrumbList className="text-white">
+              <BreadcrumbList className="">
                 <BreadcrumbItem>
-                  <BreadcrumbLink href="/" className="flex items-center text-white/90 hover:text-white">
+                  <BreadcrumbLink href="/" className="flex items-centerhover:text-white">
                     <Home className="h-4 w-4" />
                   </BreadcrumbLink>
                 </BreadcrumbItem>
-                <BreadcrumbSeparator className="text-white/60" />
+                <BreadcrumbSeparator className="" />
                 <BreadcrumbItem>
-                  <BreadcrumbLink href="/day-tours" className="text-white/90 hover:text-white">
+                  <BreadcrumbLink href="/day-tours" className="hover:text-white">
                     Day Tours
                   </BreadcrumbLink>
                 </BreadcrumbItem>
-                <BreadcrumbSeparator className="text-white/60" />
+                <BreadcrumbSeparator className="" />
                 <BreadcrumbItem>
-                  <BreadcrumbPage className="text-white">{tour.name}</BreadcrumbPage>
+                  <BreadcrumbPage className="">{tour.name}</BreadcrumbPage>
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>
           </div>
         </div>
 
-        {/* Hero Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-            {tour.name}
-          </h1>
-
-          <div className="flex items-center justify-center gap-6 text-white/80 text-lg">
-            <div className="flex items-center justify-center">
-              <MapPin className="w-6 h-6" />
-              <span className="text-xl">{tour.location}</span>
-            </div>
-
-            <div className="flex items-center">
-              <Clock className="w-5 h-5 mr-2" />
-              <span>{tour.duration}</span>
-            </div>
-            <div className="flex items-center">
-              <Users className="w-5 h-5 mr-2" />
-              <span>{tour.maxGroupSize}</span>
-            </div>
-          </div>
-        </div>
+      
       </section>
 
       {/* Main Content Section */}
-      <section className="pt-16 pb-12 lg:pb-16 bg-gray-50">
+      <section className="pt-8 pb-12 lg:pb-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Swipeable Image Gallery */}
           <div className="mb-12">
@@ -150,37 +124,37 @@ export default function DayTourDetailPage({ params }: { params: Promise<{ id: st
             <div className="lg:col-span-2">
               {/* Description */}
               <div className="mb-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">About This Tour</h2>
+                <h2 className="text-2xl text-foreground mb-4">About This Tour</h2>
                 <p className="text-gray-600 leading-relaxed">{tour.description}</p>
               </div>
 
               {/* Tour Details Grid */}
               <div className="grid grid-cols-2 gap-6 mb-8">
                 <div className="flex items-center">
-                  <Clock className="w-5 h-5 mr-3 text-gray-400" />
+                  <Clock className="w-5 h-5 mr-3 text-foreground" />
                   <div>
-                    <div className="font-semibold text-gray-900">Duration</div>
+                    <div className="font-semibold text-foreground">Duration</div>
                     <div className="text-gray-600">{tour.duration}</div>
                   </div>
                 </div>
                 <div className="flex items-center">
-                  <Users className="w-5 h-5 mr-3 text-gray-400" />
+                  <Users className="w-5 h-5 mr-3 text-foreground" />
                   <div>
-                    <div className="font-semibold text-gray-900">Group Size</div>
+                    <div className="font-semibold text-foreground">Group Size</div>
 
                   </div>
                 </div>
                 <div className="flex items-center">
-                  <Car className="w-5 h-5 mr-3 text-gray-400" />
+                  <Car className="w-5 h-5 mr-3 text-foreground" />
                   <div>
-                    <div className="font-semibold text-gray-900">Transport</div>
+                    <div className="font-semibold text-foreground">Transport</div>
 
                   </div>
                 </div>
                 <div className="flex items-center">
-                  <Calendar className="w-5 h-5 mr-3 text-gray-400" />
+                  <Calendar className="w-5 h-5 mr-3 text-foreground" />
                   <div>
-                    <div className="font-semibold text-gray-900">Best Time</div>
+                    <div className="font-semibold text-foreground">Best Time</div>
  
                   </div>
                 </div>
@@ -188,7 +162,7 @@ export default function DayTourDetailPage({ params }: { params: Promise<{ id: st
 
               {/* Highlights */}
               <div className="mb-8">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Tour Highlights</h3>
+                <h3 className="text-xl  text-foreground mb-4">Tour Highlights</h3>
                 <div className="grid grid-cols-2 gap-2">
                   {tour.highlights.map((highlight: string, index: number) => (
                     <div key={index} className="flex items-center">
@@ -201,7 +175,7 @@ export default function DayTourDetailPage({ params }: { params: Promise<{ id: st
 
               {/* Itinerary */}
               <div className="mb-8">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Tour Schedule</h3>
+                <h3 className="text-xl  text-foreground mb-4">Tour Schedule</h3>
                 <div className="space-y-4">
                   {tour.itinerary.map((item: { time: string; title: string; description: string }, index: number) => (
                     <div key={index} className="border-l-2 border-blue-200 pl-4">
@@ -233,7 +207,7 @@ export default function DayTourDetailPage({ params }: { params: Promise<{ id: st
 
             {/* Booking Sidebar */}
             <div className="lg:col-span-1 hidden lg:block">
-              <div className="bg-white rounded-2xl shadow-lg p-6 sticky top-6">
+              <div className="bg-white rounded-2xl shadow-lg p-6 sticky top-36">
                 <div className="mb-6">
                   <div className="text-3xl font-bold text-gray-900">R{tour.price.toLocaleString()}</div>
                   <div className="text-gray-600">per person</div>

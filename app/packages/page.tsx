@@ -1,16 +1,14 @@
 "use client"
 
-import { useState } from "react"
-import { MapPin, Calendar, Users, Heart, Share2, Star } from "lucide-react"
+import { MapPin, Calendar, Users, Share2, Star } from "lucide-react"   
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
-import Link from "next/link"
+import Link from "next/link"  
 import { tourPackages } from "@/data/packages"
 
 function PackageCard({ pkg }: { pkg: (typeof tourPackages)[0] }) {
-  const [isFavorited, setIsFavorited] = useState(false)
 
   return (
     <Card className="group overflow-hidden p-4 bg-primary-foreground rounded-3xl shadow-sm hover:shadow-lg transition-all duration-300 border-0 p-0">
@@ -131,8 +129,8 @@ export default function PackagesPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="space-y-24">
           {tourPackages.map((pkg) => (
-            <div className="space-y-4">
-              
+            <div className="space-y-4" key={pkg.id}>
+
               <h2 className="text-3xl md:block hidden lg:text-4xl font-medium text-foreground tracking-tight leading-tight">
                 {pkg.name}
               </h2>

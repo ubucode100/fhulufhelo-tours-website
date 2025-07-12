@@ -38,7 +38,7 @@ export default function PackageDetailPage({ params }: { params: Promise<{ id: st
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Breadcrumb Navigation */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28">
         <Breadcrumb className="mb-6">
           <BreadcrumbList>
             <BreadcrumbItem>

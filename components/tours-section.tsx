@@ -4,8 +4,7 @@ import { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { ChevronLeft, ChevronRight, MapPin, Clock, BadgeCheck, TramFront } from 'lucide-react'
-import { useEventListener, useKeyPress } from '@uidotdev/usehooks'
+import { ChevronLeft, ChevronRight, MapPin, Clock, TramFront } from 'lucide-react'
 import { dayTours } from '@/data/packages'
 
 // Transform day tours into unified format
@@ -49,11 +48,15 @@ export default function ToursSection() {
       touchStart.current = e.touches[0].clientX
     } else if (e.type === 'touchend') {
       const distance = touchStart.current - e.changedTouches[0].clientX
-      if (Math.abs(distance) > 50) distance > 0 ? next() : prev()
+      if (Math.abs(distance) > 50) {
+        if (distance > 0) {
+          next()
+        } else {
+          prev()
+        }
+      }
     }
   }
-
-  // Keyboard navigation
 
 
   // Update index on scroll
@@ -76,7 +79,7 @@ export default function ToursSection() {
 
     container.addEventListener('scroll', handleScroll)
     return () => container.removeEventListener('scroll', handleScroll)
-  }, [currentIndex, tours.length])
+  }, [currentIndex])
 
   return (
     <section className="py-16 lg:py-24 bg-gradient-to-b from-base-400 to-white">
