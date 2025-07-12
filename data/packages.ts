@@ -526,11 +526,12 @@ export const dayTours = [
       }
     ],
     images: [
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600"
+      "/images/daytours/grc_1.webp",
+      "/images/daytours/grc_2.png",
+      "/images/daytours/grc_3.webp",
+      "/images/daytours/grc_4.jpg",
+      "/images/daytours/grc_5.jpg",
+      "/images/daytours/grc_6.jpg",
     ]
   },
   {
@@ -766,7 +767,7 @@ export const dayTours = [
       "/images/daytours/cullinan_diamond_mine_3.jpg",
       "/images/daytours/cullinan_diamond_mine_4.jpg",
       "/images/daytours/cullinan_diamond_mine_5jpg.jpg",
-        "/images/daytours/cullinan_diamond_mine_6.jpg",
+      "/images/daytours/cullinan_diamond_mine_6.jpg",
     ]
   },
   {
@@ -1090,7 +1091,7 @@ export const dayTours = [
       }
     ],
     images: [
-      "/images/daytours/mabula_game_lodge.jpg",	
+      "/images/daytours/mabula_game_lodge.jpg",
       "/images/daytours/mabula_game_lodge_2.jpg",
       "/images/daytours/mabula_game_lodge_3.jpg",
       "/images/daytours/mabula_game_lodge_4.jpg",
