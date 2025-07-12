@@ -69,7 +69,7 @@ export default function Navigation() {
   return (
     <>
       {/* Main Navigation */}
-      <nav className="fixed inset-x-0 top-0 z-40 bg-base py-4">
+      <nav className="fixed inset-x-0 top-0 z-40 bg-base py-4 px-4 md:px-0">
         <div className="mx-auto max-w-7xl flex items-center justify-between bg-background rounded-md  px-4 py-2">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
@@ -132,7 +132,7 @@ export default function Navigation() {
           <button
             type="button"
             onClick={() => setIsMenuOpen(true)}
-            className="lg:hidden inline-flex items-center justify-center rounded-full p-2 bg-gray-100 text-gray-700 shadow"
+            className="lg:hidden inline-flex items-center justify-center rounded-full p-2 text-foreground cursor-pointer"
             aria-expanded={isMenuOpen}
           >
             <span className="sr-only">Open main menu</span>
@@ -143,17 +143,19 @@ export default function Navigation() {
 
       {/* Mobile Navigation Overlay */}
       {isMenuOpen && (
-        <div className="lg:hidden fixed inset-0 z-50 bg-black/40 flex flex-col">
+        <div className="lg:hidden fixed inset-0 z-50 bg-background flex flex-col">
           {/* Top bar with close */}
           <div className="flex items-center justify-between bg-base/90 px-4 py-3">
             <Link href="/" className="flex items-center gap-2" onClick={() => setIsMenuOpen(false)}>
               <Image src="/logo.jpg" alt="Fhulufhelo Tours Logo" width={32} height={32} className="h-8 w-8 object-contain" />
-              <span className="text-lg font-bold text-foreground">Fhulufhelo Tours</span>
+              <span className="text-lg tracking-tight text-foreground font-['Georgia'] font-medium antialiased">
+                Fhulufhelo Tours
+              </span>
             </Link>
             <button
               type="button"
               onClick={() => setIsMenuOpen(false)}
-              className="rounded-full p-2 text-gray-700 bg-white/80 shadow"
+              className=" p-2 text-gray-700"
             >
               <span className="sr-only">Close menu</span>
               <X aria-hidden="true" className="h-6 w-6" />
@@ -161,12 +163,12 @@ export default function Navigation() {
           </div>
           {/* Nav links */}
           <div className="flex-1 flex flex-col items-center justify-center">
-            <div className="bg-white/90 rounded-full shadow px-2 py-1 flex flex-col w-11/12 max-w-xs gap-1">
+            <div className="flex flex-col w-11/12 max-w-xs gap-1">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`w-full text-center px-4 py-2 rounded-full transition-colors duration-200 font-semibold text-sm
+                  className={`w-full text-center px-4 py-2 rounded-full transition-colors duration-200 text-lg
                     ${isActive(link.href)
                       ? "bg-foreground text-white shadow"
                       : "text-gray-700 hover:bg-gray-100"
