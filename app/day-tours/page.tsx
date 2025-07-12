@@ -69,10 +69,10 @@ function TourCard({ tour }: { tour: (typeof dayTours)[0] }) {
 
           <div className="pt-4">
             {/* Title */}
-            <h3 className="block md:hidden text-xl font-bold text-gray-900 mb-2">{tour.name}</h3>
+            <h3 className="block md:hidden text-xl text-gray-900 mb-2">{tour.name}</h3>
 
             {/* Description */}
-            <p className="text-gray-600 text-lg mb-4 line-clamp-2 md:line-clamp-none">{tour.description}</p>
+            <p className="text-foreground/70 text-lg mb-4 line-clamp-2 md:line-clamp-none">{tour.description}</p>
 
             {/* Details */}
             <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
@@ -96,7 +96,7 @@ function TourCard({ tour }: { tour: (typeof dayTours)[0] }) {
               R{tour.price?.adult?.toLocaleString() || tour.price?.toLocaleString()} /pp
             </div>
             <Link href={`/day-tours/${tour.id}`}>
-              <Button variant="outline" className="rounded-full hover:bg-gray-100 px-6 cursor-pointer">View Details</Button>
+              <Button className="rounded-full hover:bg-gray-100 px-6 cursor-pointer">View Details</Button>
             </Link>
           </div>
         </div>
@@ -125,12 +125,14 @@ export default function DayToursPage() {
 
       {/* Tours Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid grid-cols-1 gap-8">
+          <div className="space-y-24">
           {dayTours.map((tour) => (
-            <>
-              <p className="hidden md:block mt-16 text-4xl font-semibold tracking-tight text-pretty text-primary sm:text-5xl">{tour.name}</p>
+            <div className="space-y-4">
+              <h2 className="md:block hidden text-3xl lg:text-4xl font-medium text-foreground tracking-tight leading-tight">
+               { tour.name }
+              </h2>
               <TourCard key={tour.id} tour={tour} />
-            </>
+            </div>
           ))}
         </div>
       </div>
