@@ -76,10 +76,10 @@ export default function PackagesSection() {
               <span className="inline-block px-3 py-1 bg-white text-slate-700 text-sm font-medium rounded-full mb-4">
                 Safari Packages
               </span>
-              <h2 className="text-3xl lg:text-5xl font-medium text-slate-900 mb-4 tracking-tight leading-tight">
+              <h2 className="text-3xl lg:text-5xl font-medium text-foreground mb-4 tracking-tight leading-tight">
                 Multi-Day Adventures
               </h2>
-              <p className="text-base lg:text-lg text-slate-600 font-light leading-relaxed max-w-2xl">
+              <p className="text-base lg:text-lg text-foreground/50 font-light leading-relaxed max-w-2xl">
                 Immersive safari experiences combining luxury accommodation, expert guides, and unforgettable wildlife
                 encounters
               </p>
@@ -106,7 +106,7 @@ export default function PackagesSection() {
 
                 {/* Category Badge */}
                 <div className="absolute top-6 left-6">
-                  <span className="px-4 py-2 bg-white/90 backdrop-blur-sm text-slate-900 text-sm font-medium rounded-full">
+                  <span className="px-4 py-2 bg-white/90 backdrop-blur-sm text-foreground text-sm font-medium rounded-full">
                     {pkg.category}
                   </span>
                 </div>
@@ -135,7 +135,7 @@ export default function PackagesSection() {
                   {/* CTA Button */}
                   <Button
                     size="lg"
-                    className="w-full bg-white text-slate-900 hover:bg-white/90 px-8 py-4 rounded-full text-base font-medium shadow-lg hover:shadow-xl transition-all duration-300"
+                    className="w-full bg-white text-foreground hover:bg-white/90 px-8 py-4 rounded-full text-base font-medium shadow-lg hover:shadow-xl transition-all duration-300"
                   >
                     Get A Quote
                   </Button>
@@ -146,10 +146,10 @@ export default function PackagesSection() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center mt-16 lg:mt-20">
+        {/* <div className="text-center mt-16 lg:mt-20">
           <div className="bg-white rounded-2xl p-8 lg:p-12 shadow-lg max-w-2xl mx-auto">
-            <h3 className="text-2xl lg:text-3xl font-medium text-slate-900 mb-4">Need a Custom Package?</h3>
-            <p className="text-slate-600 mb-6 leading-relaxed">
+            <h3 className="text-2xl lg:text-3xl font-medium text-foreground mb-4">Need a Custom Package?</h3>
+            <p className="text-foreground/50 mb-6 leading-relaxed">
               Let us create a personalized safari experience tailored to your preferences, budget, and travel dates.
             </p>
             <Button
@@ -159,7 +159,7 @@ export default function PackagesSection() {
               Contact Our Safari Experts
             </Button>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   )

@@ -35,10 +35,10 @@ export default function TrustSection() {
               <span className="inline-block px-3 py-1 bg-slate-100 text-slate-700 text-sm font-medium rounded-full mb-4">
                 Why Choose Us
               </span>
-              <h2 className="text-3xl lg:text-5xl font-medium text-slate-900 mb-4 tracking-tight leading-tight">
+              <h2 className="text-3xl lg:text-5xl font-medium text-foreground mb-4 tracking-tight leading-tight">
                 Trusted by Thousands
               </h2>
-              <p className="text-base lg:text-lg text-slate-600 font-light leading-relaxed max-w-2xl">
+              <p className="text-base lg:text-lg text-foreground/50 font-light leading-relaxed max-w-2xl">
                 25 years of creating unforgettable South African experiences with official certification and complete
                 personalization.
               </p>
@@ -50,9 +50,9 @@ export default function TrustSection() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {trustStats.map((stat, index) => (
             <div key={index} className="text-center lg:text-left">
-              <div className="text-4xl lg:text-6xl font-light text-slate-900 mb-2 tracking-tight">{stat.number}</div>
-              <div className="text-sm lg:text-base font-medium text-slate-900 mb-1">{stat.label}</div>
-              <div className="text-xs lg:text-sm text-slate-600 font-light leading-relaxed">{stat.description}</div>
+              <div className="text-4xl lg:text-6xl font-light text-foreground mb-2 tracking-tight">{stat.number}</div>
+              <div className="text-sm lg:text-base font-medium text-foreground mb-1">{stat.label}</div>
+              <div className="text-xs lg:text-sm text-foreground/50 font-light leading-relaxed">{stat.description}</div>
             </div>
           ))}
         </div>

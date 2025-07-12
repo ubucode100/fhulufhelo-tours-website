@@ -39,7 +39,7 @@ export default function PackageDetailPage({ params }: { params: Promise<{ id: st
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Breadcrumb Navigation */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24">
         <Breadcrumb className="mb-6">
           <BreadcrumbList>
             <BreadcrumbItem>
@@ -61,21 +61,9 @@ export default function PackageDetailPage({ params }: { params: Promise<{ id: st
 
       {/* Page Header */}
       <div className="bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-8">
-            <div className="flex items-center gap-3 mb-4">
-              <Badge className="bg-purple-600 text-white hover:bg-purple-700">Safari Package</Badge>
-              <Badge className="bg-yellow-500 text-white hover:bg-yellow-600 flex items-center gap-1">
-                <Star className="w-3 h-3 fill-current" />
-                {pkg.rating}
-              </Badge>
-              {pkg.originalPrice && (
-                <Badge className="bg-red-500 text-white hover:bg-red-600">Save R{pkg.originalPrice - pkg.price}</Badge>
-              )}
-            </div>
-
             <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">{pkg.name}</h1>
-
             <div className="flex items-center text-gray-600 mb-4">
               <MapPin className="w-5 h-5 mr-2" />
               <span className="text-lg">{pkg.location}</span>
@@ -222,7 +210,7 @@ export default function PackageDetailPage({ params }: { params: Promise<{ id: st
                   Get A Quote
                 </Button>
 
-                <WhatsAppButton tourName={pkg.name} className="w-full rounded-full" />
+                <WhatsAppButton className="w-full rounded-full" />
               </div>
             </div>
           </div>
@@ -242,7 +230,7 @@ export default function PackageDetailPage({ params }: { params: Promise<{ id: st
             <div className="text-sm text-gray-600">per person</div>
           </div>
           <div className="flex gap-2">
-            <WhatsAppButton tourName={pkg.name} className="rounded-full px-4" />
+            <WhatsAppButton className="rounded-full px-4" />
             <Button className="rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6">
               Get Quote
             </Button>

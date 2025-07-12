@@ -127,10 +127,10 @@ export default function ToursSection() {
               <span className="inline-block px-3 py-1 bg-slate-100 text-slate-700 text-sm font-medium rounded-full mb-3">
                 Featured Tours
               </span>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-slate-900 mb-2 lg:mb-3 tracking-tight leading-tight">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-foreground mb-2 lg:mb-3 tracking-tight leading-tight">
                 Experience the Magic
               </h2>
-              <p className="text-sm sm:text-base lg:text-lg text-slate-600 font-normal leading-relaxed max-w-2xl">
+              <p className="text-sm sm:text-base lg:text-lg text-foreground/50 font-normal leading-relaxed max-w-2xl">
                 Carefully curated adventures that showcase the very best of South Africa
               </p>
             </div>
@@ -160,9 +160,9 @@ export default function ToursSection() {
 
               {/* Counter - Show on all devices */}
               <div className="flex items-center gap-1 bg-slate-50 px-3 py-1.5 rounded-full text-sm">
-                <span className="text-slate-900 font-medium">{currentIndex + 1}</span>
+                <span className="text-foreground font-medium">{currentIndex + 1}</span>
                 <span className="text-slate-400">/</span>
-                <span className="text-slate-600">{tours.length}</span>
+                <span className="text-foreground/50">{tours.length}</span>
               </div>
             </div>
           </div>
@@ -207,7 +207,7 @@ export default function ToursSection() {
 
                     {/* Category Badge */}
                     <div className="absolute top-4 left-4">
-                      <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-slate-900 text-xs font-medium rounded-full">
+                      <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-foreground text-xs font-medium rounded-full">
                         {tour.category}
                       </span>
                     </div>
@@ -238,7 +238,7 @@ export default function ToursSection() {
                         </div>
                         <Link
                           href={`/day-tours/${tour.id}`}
-                          className="bg-white text-slate-900 hover:bg-white/90 px-4 py-2 rounded-full text-xs font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex-shrink-0 focus:outline-none"
+                          className="bg-white text-foreground hover:bg-white/90 px-4 py-2 rounded-full text-xs font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex-shrink-0 focus:outline-none"
                           aria-label={`Book ${tour.title}`}
                           prefetch={false}
                           onClick={e => e.stopPropagation()}

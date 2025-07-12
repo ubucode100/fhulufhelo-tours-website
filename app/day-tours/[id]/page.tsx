@@ -157,7 +157,7 @@ export default function DayTourDetailPage({ params }: { params: Promise<{ id: st
               <div className="mb-8">
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Tour Highlights</h3>
                 <div className="grid grid-cols-2 gap-2">
-                  {tour.highlights.map((highlight, index) => (
+                  {tour.highlights.map((highlight: string, index: number) => (
                     <div key={index} className="flex items-center">
                       <Award className="w-4 h-4 mr-2 text-green-500" />
                       <span className="text-gray-600">{highlight}</span>
@@ -170,7 +170,7 @@ export default function DayTourDetailPage({ params }: { params: Promise<{ id: st
               <div className="mb-8">
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Tour Schedule</h3>
                 <div className="space-y-4">
-                  {tour.itinerary.map((item, index) => (
+                  {tour.itinerary.map((item: { time: string; title: string; description: string }, index: number) => (
                     <div key={index} className="border-l-2 border-blue-200 pl-4">
                       <div className="flex items-center mb-2">
                         <div className="bg-blue-600 text-white text-sm font-bold rounded-full px-3 py-1 -ml-6 mr-3">
@@ -188,7 +188,7 @@ export default function DayTourDetailPage({ params }: { params: Promise<{ id: st
               <div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">What's Included</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                  {tour.inclusions.map((inclusion, index) => (
+                  {tour.inclusions.map((inclusion: string, index: number) => (
                     <div key={index} className="flex items-center">
                       <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
                       <span className="text-gray-600">{inclusion}</span>
@@ -231,7 +231,7 @@ export default function DayTourDetailPage({ params }: { params: Promise<{ id: st
                   Book This Tour
                 </Button>
 
-                <WhatsAppButton tourName={tour.name} className="w-full rounded-full" />
+                <WhatsAppButton className="w-full rounded-full" />
               </div>
             </div>
           </div>
@@ -246,7 +246,7 @@ export default function DayTourDetailPage({ params }: { params: Promise<{ id: st
             <div className="text-sm text-gray-600">per person • {tour.duration}</div>
           </div>
           <div className="flex gap-2">
-            <WhatsAppButton tourName={tour.name} className="rounded-full px-4" />
+            <WhatsAppButton className="rounded-full px-4" />
             <Button className="rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6">
               Book Now
             </Button>

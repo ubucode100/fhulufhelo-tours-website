@@ -53,10 +53,10 @@ export default function TestimonialsSection() {
               <span className="inline-block px-3 py-1 bg-white text-slate-700 text-sm font-medium rounded-full mb-4">
                 Guest Reviews
               </span>
-              <h2 className="text-3xl lg:text-5xl font-medium text-slate-900 mb-4 tracking-tight leading-tight">
+              <h2 className="text-3xl lg:text-5xl font-medium text-foreground mb-4 tracking-tight leading-tight">
                 Trusted by Travelers
               </h2>
-              <p className="text-base lg:text-lg text-slate-600 font-light leading-relaxed max-w-2xl">
+              <p className="text-base lg:text-lg text-foreground/50 font-light leading-relaxed max-w-2xl">
                 Hear from our guests about their unforgettable South African adventures and why they choose us for their
                 dream journeys
               </p>
@@ -88,8 +88,8 @@ export default function TestimonialsSection() {
 
               {/* Customer Info */}
               <div className="flex items-center gap-4">
-                  <div className="font-medium text-slate-900">{testimonial.name}</div>
-                  <div className="text-sm text-slate-600">{testimonial.location}</div>
+                <div className="font-medium text-foreground">{testimonial.name}</div>
+                <div className="text-sm text-foreground/50">{testimonial.location}</div>
                 <div className="text-xs text-slate-500 mt-1">{testimonial.tour}</div>
               </div>
             </div>
@@ -100,16 +100,16 @@ export default function TestimonialsSection() {
         <div className="mt-16 lg:mt-20 text-center">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
             <div>
-              <div className="text-3xl lg:text-4xl font-light text-slate-900 mb-2">4.9/5</div>
-              <div className="text-sm text-slate-600">Average Rating</div>
+              <div className="text-3xl lg:text-4xl font-light text-foreground mb-2">4.9/5</div>
+              <div className="text-sm text-foreground/50">Average Rating</div>
             </div>
             <div>
-              <div className="text-3xl lg:text-4xl font-light text-slate-900 mb-2">500+</div>
-              <div className="text-sm text-slate-600">Happy Travelers</div>
+              <div className="text-3xl lg:text-4xl font-light text-foreground mb-2">500+</div>
+              <div className="text-sm text-foreground/50">Happy Travelers</div>
             </div>
             <div>
-              <div className="text-3xl lg:text-4xl font-light text-slate-900 mb-2">98%</div>
-              <div className="text-sm text-slate-600">Would Recommend</div>
+              <div className="text-3xl lg:text-4xl font-light text-foreground mb-2">98%</div>
+              <div className="text-sm text-foreground/50">Would Recommend</div>
             </div>
           </div>
         </div>
