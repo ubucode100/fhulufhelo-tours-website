@@ -28,53 +28,86 @@ export default function DayTourDetailPage({ params }: { params: Promise<{ id: st
 
   const tour = getDayTourById(id)
 
-  console.log(tour, id)
-
+  if (!tour) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-gray-900 mb-4">Tour Not Found</h1>
+          <p className="text-gray-600 mb-8">The tour you're looking for doesn't exist.</p>
+          <Button asChild>
+            <a href="/day-tours">Back to Day Tours</a>
+          </Button>
+        </div>
+      </div>
+    )
+  }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <section className="py-6 lg:py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Breadcrumb Navigation */}
-          <Breadcrumb className="mb-6">
-            <BreadcrumbList>
-              <BreadcrumbItem>
-                <BreadcrumbLink href="/" className="flex items-center">
-                  <Home className="h-4 w-4" />
-                </BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator />
-              <BreadcrumbItem>
-                <BreadcrumbLink href="/day-tours">Day Tours</BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator />
-              <BreadcrumbItem>
-                <BreadcrumbPage>{tour.name}</BreadcrumbPage>
-              </BreadcrumbItem>
-            </BreadcrumbList>
-          </Breadcrumb>
+    <div className="min-h-screen">
+      {/* Hero Section with Background Image */}
+      <section
+        className="relative h-[40vh] flex items-center justify-center"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url(${tour.images[0]})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        {/* Breadcrumb Navigation - Positioned at top */}
+        <div className="absolute top-18 left-0 right-0 z-10">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <Breadcrumb>
+              <BreadcrumbList className="text-white">
+                <BreadcrumbItem>
+                  <BreadcrumbLink href="/" className="flex items-center text-white/90 hover:text-white">
+                    <Home className="h-4 w-4" />
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator className="text-white/60" />
+                <BreadcrumbItem>
+                  <BreadcrumbLink href="/day-tours" className="text-white/90 hover:text-white">
+                    Day Tours
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator className="text-white/60" />
+                <BreadcrumbItem>
+                  <BreadcrumbPage className="text-white">{tour.name}</BreadcrumbPage>
+                </BreadcrumbItem>
+              </BreadcrumbList>
+            </Breadcrumb>
+          </div>
+        </div>
 
-          {/* Tour Header */}
-          <div className="mb-8">
-            <div className="flex items-center gap-3 mb-4">
-              <Badge className="bg-blue-600 text-white hover:bg-blue-700">Day Tour</Badge>
-              <Badge className="bg-yellow-500 text-white hover:bg-yellow-600 flex items-center gap-1">
-                <Star className="w-3 h-3 fill-current" />
-                {tour.rating}
-              </Badge>
-              <Badge className="bg-green-500 text-white hover:bg-green-600">{tour.difficulty}</Badge>
+        {/* Hero Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            {tour.name}
+          </h1>
+
+          <div className="flex items-center justify-center gap-6 text-white/80 text-lg">
+            <div className="flex items-center justify-center">
+              <MapPin className="w-6 h-6" />
+              <span className="text-xl">{tour.location}</span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">{tour.name}</h1>
-
-            <div className="flex items-center text-gray-600 mb-4">
-              <MapPin className="w-5 h-5 mr-2" />
-              <span className="text-lg">{tour.location}</span>
+            <div className="flex items-center">
+              <Clock className="w-5 h-5 mr-2" />
+              <span>{tour.duration}</span>
+            </div>
+            <div className="flex items-center">
+              <Users className="w-5 h-5 mr-2" />
+              <span>{tour.groupSize}</span>
             </div>
           </div>
+        </div>
+      </section>
 
+      {/* Main Content Section */}
+      <section className="pt-16 pb-12 lg:pb-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Swipeable Image Gallery */}
-          <div className="mb-8">
+          <div className="mb-12">
             <SwipeableGallery images={tour.images} alt={tour.name} />
           </div>
 
@@ -89,7 +122,7 @@ export default function DayTourDetailPage({ params }: { params: Promise<{ id: st
               </div>
 
               {/* Tour Details Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+              <div className="grid grid-cols-2 gap-6 mb-8">
                 <div className="flex items-center">
                   <Clock className="w-5 h-5 mr-3 text-gray-400" />
                   <div>
@@ -123,7 +156,7 @@ export default function DayTourDetailPage({ params }: { params: Promise<{ id: st
               {/* Highlights */}
               <div className="mb-8">
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Tour Highlights</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                <div className="grid grid-cols-2 gap-2">
                   {tour.highlights.map((highlight, index) => (
                     <div key={index} className="flex items-center">
                       <Award className="w-4 h-4 mr-2 text-green-500" />
@@ -220,9 +253,6 @@ export default function DayTourDetailPage({ params }: { params: Promise<{ id: st
           </div>
         </div>
       </div>
-
-      {/* Floating WhatsApp Button */}
-      <WhatsAppButton variant="floating" tourName={tour.name} />
 
       {/* Add padding to prevent content from being hidden behind sticky bar */}
       <div className="lg:hidden h-20"></div>

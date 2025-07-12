@@ -13,11 +13,11 @@ function TourCard({ tour }: { tour: (typeof dayTours)[0] }) {
   const [isFavorited, setIsFavorited] = useState(false)
 
   return (
-    <Card className="group overflow-hidden bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border-0">
+    <Card className="group overflow-hidden bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border-0 p-0">
       {/* Image Grid - Show ALL images */}
       <div className="relative">
         <div className="grid grid-cols-2 gap-1 p-1">
-          {tour.images?.map((image, index) => (
+          {tour.images?.slice(0, 4).map((image, index) => (
             <div key={index} className="aspect-square relative overflow-hidden rounded-lg">
               <Image
                 src={image || "/placeholder.svg"}
@@ -46,14 +46,6 @@ function TourCard({ tour }: { tour: (typeof dayTours)[0] }) {
             size="sm"
             variant="ghost"
             className="h-8 w-8 rounded-full bg-white/90 backdrop-blur-sm hover:bg-white shadow-sm"
-            onClick={() => setIsFavorited(!isFavorited)}
-          >
-            <Heart className={`h-4 w-4 ${isFavorited ? "fill-red-500 text-red-500" : "text-gray-600"}`} />
-          </Button>
-          <Button
-            size="sm"
-            variant="ghost"
-            className="h-8 w-8 rounded-full bg-white/90 backdrop-blur-sm hover:bg-white shadow-sm"
           >
             <Share2 className="h-4 w-4 text-gray-600" />
           </Button>
@@ -66,7 +58,7 @@ function TourCard({ tour }: { tour: (typeof dayTours)[0] }) {
       </div>
 
       {/* Content - Clean and Simple */}
-      <div className="p-6">
+      <div className="px-4 pb-2">
         {/* Location */}
         <div className="flex items-center text-sm text-gray-500 mb-2">
           <MapPin className="w-4 h-4 mr-1" />
@@ -107,9 +99,9 @@ function TourCard({ tour }: { tour: (typeof dayTours)[0] }) {
 
 export default function DayToursPage() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen">
       {/* Header */}
-      <div className="bg-white">
+      <div className="bg-gradient-to-b bg-gradient-to-b from-orange-600 to-white pt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="text-center">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">Day Tours</h1>
@@ -122,7 +114,7 @@ export default function DayToursPage() {
 
       {/* Tours Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2  gap-8">
           {dayTours.map((tour) => (
             <TourCard key={tour.id} tour={tour} />
           ))}
