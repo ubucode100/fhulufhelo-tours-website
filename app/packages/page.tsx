@@ -18,7 +18,7 @@ function PackageCard({ pkg }: { pkg: (typeof tourPackages)[0] }) {
       <div className="flex md:flex-row flex-col gap-3">
 
         {/* Image Grid - Show ALL images */}
-        <div className="relative md:w-9/10">
+        <div className="relative md:w-3/2">
           <div className="grid gap-1 p-2 grid-cols-2 md:grid-cols-4 md:grid-rows-3">
             {pkg.images.slice(0, 4).map((image, index) => (
               <div
@@ -41,14 +41,7 @@ function PackageCard({ pkg }: { pkg: (typeof tourPackages)[0] }) {
 
           {/* Top Actions */}
           <div className="absolute top-3 right-3 flex gap-2">
-            <Button
-              size="sm"
-              variant="ghost"
-              className="h-8 w-8 rounded-full bg-white/90 backdrop-blur-sm hover:bg-white shadow-sm"
-              onClick={() => setIsFavorited(!isFavorited)}
-            >
-              <Heart className={`h-4 w-4 ${isFavorited ? "fill-red-500 text-red-500" : "text-gray-600"}`} />
-            </Button>
+
             <Button
               size="sm"
               variant="ghost"
@@ -60,17 +53,8 @@ function PackageCard({ pkg }: { pkg: (typeof tourPackages)[0] }) {
 
           {/* Category Badge */}
           <div className="absolute top-3 left-3">
-            <Badge className="bg-white/90 text-gray-900 hover:bg-white text-sm">Safari Package</Badge>
+            <Badge className="bg-white/90 text-foreground hover:bg-white text-sm">Safari Package</Badge>
           </div>
-
-          {/* Discount Badge */}
-          {pkg.originalPrice && (
-            <div className="absolute bottom-3 left-3">
-              <Badge className="bg-red-500 text-white hover:bg-red-600 text-sm">
-                Save R{pkg.originalPrice - pkg.price}
-              </Badge>
-            </div>
-          )}
         </div>
 
         {/* Content - Clean and Simple */}
@@ -78,43 +62,42 @@ function PackageCard({ pkg }: { pkg: (typeof tourPackages)[0] }) {
 
           <div className="pt-4">
             {/* Title */}
-            <h3 className="block md:hidden text-xl font-bold text-gray-900 mb-2">{pkg.name}</h3>
+            <h3 className="block md:hidden text-xl font-medium text-foreground mb-2">{pkg.name}</h3>
 
             {/* Description */}
-            <p className="text-gray-600 text-lg mb-4 line-clamp-2 md:line-clamp-none">{pkg.description}</p>
-
-            {/* Details */}
-            <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
+            <p className="text-gray-600 text-sm md:text-lg mb-4 line-clamp-3 md:line-clamp-none">{pkg.description}</p>
 
               <div className="flex items-center text-sm text-gray-500">
                 <MapPin className="w-4 h-4 mr-1" />
                 <span>{pkg.location}</span>
               </div>
 
-              <div className="flex items-center">
-                <Calendar className="w-4 h-4 mr-1" />
-                <span>{pkg.duration}</span>
-              </div>
+            {/* Details */}
+            <div className="flex items-center gap-2 text-sm text-gray-500 py-4 text-base flex-wrap">
+              <Badge variant="secondary" className="flex items-center gap-1 px-3 py-1 rounded-full">
+                <Calendar className="w-4 h-4" />
+                <span className="text-base">{pkg.duration}</span>
+              </Badge>
 
-              <div className="flex items-center">
-                <Users className="w-4 h-4 mr-1" />
-                <span>{pkg.groupSize}</span>
-              </div>
+              <Badge variant="secondary" className="flex items-center gap-1 px-3 py-1 rounded-full">
+                <Users className="w-4 h-4" />
+                <span className="text-base">{pkg.groupSize}</span>
+              </Badge>
 
-              <div className="flex items-center">
-                <Star className="w-4 h-4 mr-1 fill-yellow-400 text-yellow-400" />
-                <span>{pkg.rating}</span>
-              </div>
+              <Badge variant="secondary" className="flex items-center gap-1 px-3 py-1 rounded-full">
+                <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                <span className="text-base">{pkg.rating}</span>
+              </Badge>
           </div>
           </div>
 
           {/* Price & Book */}
           <div className="flex items-center gap-3 py-2 justify-end">
-            <div className="text-2xl text-gray-900">
+            <div className="text-2xl text-foreground">
               {pkg.originalPrice && (
                 <div className="text-sm text-gray-500 line-through">R{pkg.originalPrice.toLocaleString()}</div>
               )}
-              <div className="text-2xl font-bold text-gray-900">R{pkg.price.toLocaleString()}</div>
+              <div className="text-2xl  text-foreground">R{pkg.price.toLocaleString()}</div>
             </div>
             <Link href={`/packages/${pkg.id}`}>
               <Button variant="outline" className="rounded-full hover:bg-gray-100 px-6 cursor-pointer">View Details</Button>
@@ -134,7 +117,7 @@ export default function PackagesPage() {
       <div className="bg-gradient-to-b from-base-400 to-white pt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="text-center">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">Safari Packages</h1>
+            <h1 className="text-4xl font-bold text-foreground mb-4">Safari Packages</h1>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Multi-day luxury safari experiences with premium accommodations and expert guides
             </p>
@@ -149,7 +132,7 @@ export default function PackagesPage() {
           <div className="grid grid-cols-1 gap-8">
           {tourPackages.map((pkg) => (
             <>
-              <p className="hidden md:block mt-16 text-4xl font-semibold tracking-tight text-pretty text-primary sm:text-5xl">{pkg.name}</p>
+              <p className="hidden md:block mt-16 text-2xl font-semibold tracking-tight text-pretty text-primary sm:text-4xl">{pkg.name}</p>
               <PackageCard key={pkg.id} pkg={pkg} />
             </>
           ))}
