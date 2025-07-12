@@ -1,8 +1,7 @@
 "use client"
 
-import { MapPin, Calendar, Users, Star, Clock, Award, Car, Home } from "lucide-react"
+import { MapPin, Calendar, Users, Clock, Award, Car, Home, Link } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
 import {
   Breadcrumb,
@@ -17,13 +16,47 @@ import { SwipeableGallery } from "@/components/swipeable-gallery"
 import { dayTours } from "@/data/packages"
 import { use } from "react"
 
+// TypeScript interface for day tour structure
+interface DayTour {
+  id: string
+  name: string
+  duration: string
+  pickupTime: string
+  returnTime: string
+  price: {
+    adult: number
+    child: number
+    currency: string
+  }
+  description: string
+  highlights: string[]
+  inclusions: string[]
+  exclusions: string[]
+  location: string
+  category: string
+  difficulty: string
+  minAge: number
+  maxGroupSize: number
+  availableDays: string[]
+  itinerary: Array<{
+    time: string
+    title: string
+    description: string
+  }>
+  images: string[]
+}
+
 export default function DayTourDetailPage({ params }: { params: Promise<{ id: string }> }) {
 
   const { id } = use(params)
 
-  function getDayTourById(id: string) {
-    const tour = (dayTours as Array<any>).find((tour) => tour.id === id)
-    return tour
+  /**
+   * Retrieves a day tour by its ID from the dayTours array
+   * @param id - The unique identifier of the tour
+   * @returns The tour object if found, undefined otherwise
+   */
+  function getDayTourById(id: string): DayTour | undefined {
+    return dayTours.find((tour) => tour.id === id)
   }
 
   const tour = getDayTourById(id)
@@ -33,9 +66,9 @@ export default function DayTourDetailPage({ params }: { params: Promise<{ id: st
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-gray-900 mb-4">Tour Not Found</h1>
-          <p className="text-gray-600 mb-8">The tour you're looking for doesn't exist.</p>
+          <p className="text-gray-600 mb-8">The tour you&apos;re looking for doesn&apos;t exist.</p>
           <Button asChild>
-            <a href="/day-tours">Back to Day Tours</a>
+            <Link href="/day-tours">Back to Day Tours</Link>
           </Button>
         </div>
       </div>
@@ -97,7 +130,7 @@ export default function DayTourDetailPage({ params }: { params: Promise<{ id: st
             </div>
             <div className="flex items-center">
               <Users className="w-5 h-5 mr-2" />
-              <span>{tour.groupSize}</span>
+              <span>{tour.maxGroupSize}</span>
             </div>
           </div>
         </div>
@@ -134,21 +167,21 @@ export default function DayTourDetailPage({ params }: { params: Promise<{ id: st
                   <Users className="w-5 h-5 mr-3 text-gray-400" />
                   <div>
                     <div className="font-semibold text-gray-900">Group Size</div>
-                    <div className="text-gray-600">{tour.groupSize}</div>
+
                   </div>
                 </div>
                 <div className="flex items-center">
                   <Car className="w-5 h-5 mr-3 text-gray-400" />
                   <div>
                     <div className="font-semibold text-gray-900">Transport</div>
-                    <div className="text-gray-600">{tour.transport}</div>
+
                   </div>
                 </div>
                 <div className="flex items-center">
                   <Calendar className="w-5 h-5 mr-3 text-gray-400" />
                   <div>
                     <div className="font-semibold text-gray-900">Best Time</div>
-                    <div className="text-gray-600">{tour.bestTime}</div>
+ 
                   </div>
                 </div>
               </div>
@@ -186,7 +219,7 @@ export default function DayTourDetailPage({ params }: { params: Promise<{ id: st
 
               {/* Inclusions */}
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">What's Included</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">What&apos;s Included</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   {tour.inclusions.map((inclusion: string, index: number) => (
                     <div key={index} className="flex items-center">
@@ -209,14 +242,7 @@ export default function DayTourDetailPage({ params }: { params: Promise<{ id: st
                 <Separator className="my-6" />
 
                 <div className="space-y-4 mb-6">
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="text-gray-600">Rating</span>
-                    <div className="flex items-center">
-                      <Star className="w-4 h-4 fill-yellow-400 text-yellow-400 mr-1" />
-                      <span className="font-semibold">{tour.rating}</span>
-                      <span className="text-gray-500 ml-1">({tour.reviewCount} reviews)</span>
-                    </div>
-                  </div>
+                  
                   <div className="flex items-center justify-between text-sm">
                     <span className="text-gray-600">Difficulty</span>
                     <span className="font-semibold text-gray-900">{tour.difficulty}</span>

@@ -1,7 +1,6 @@
 "use client"
 
-import { useState } from "react"
-import { MapPin, Clock, Users, Heart, Share2 } from "lucide-react"
+import { MapPin, Clock, Share2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -10,7 +9,6 @@ import Link from "next/link"
 import { dayTours } from "@/data/packages"
 
 function TourCard({ tour }: { tour: (typeof dayTours)[0] }) {
-  const [isFavorited, setIsFavorited] = useState(false)
 
   return (
     <Card className="group overflow-hidden bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border-0 p-0">
@@ -102,7 +100,7 @@ export default function DayToursPage() {
           <div className="text-center">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">Day Tours</h1>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Discover South Africa's most iconic destinations in unforgettable single-day experiences
+              Discover South Africa&apos;s most iconic destinations in unforgettable single-day experiences
             </p>
           </div>
         </div>

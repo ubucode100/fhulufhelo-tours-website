@@ -1,8 +1,8 @@
 "use client"
 
-import { useState } from "react"
 import { MapPin, Calendar } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 
 const packages = [
   {
@@ -63,7 +63,7 @@ const packages = [
 ]
 
 export default function PackagesSection() {
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null)
+
 
   return (
     <section className="py-16 lg:py-24 bg-slate-50">
@@ -73,7 +73,7 @@ export default function PackagesSection() {
         <div className="mb-12 lg:mb-16">
           <div className="flex items-start justify-between">
             <div className="flex-1">
-              <span className="inline-block px-3 py-1 bg-white text-slate-700 text-sm font-medium rounded-full mb-4">
+              <span className="inline-block px-3 py-1 bg-white text-foreground text-sm font-medium rounded-full mb-4">
                 Safari Packages
               </span>
               <h2 className="text-3xl lg:text-5xl font-medium text-foreground mb-4 tracking-tight leading-tight">
@@ -93,14 +93,14 @@ export default function PackagesSection() {
             <div
               key={pkg.id}
               className="group relative overflow-hidden rounded-3xl bg-white shadow-xl hover:shadow-2xl transition-all duration-700 hover:-translate-y-3"
-              onMouseEnter={() => setHoveredCard(pkg.id)}
-              onMouseLeave={() => setHoveredCard(null)}
             >
               <div className="aspect-[4/5] relative overflow-hidden">
-                <img
+                <Image
                   src={pkg.image || "/placeholder.svg"}
                   alt={pkg.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  width={100}
+                  height={100}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 

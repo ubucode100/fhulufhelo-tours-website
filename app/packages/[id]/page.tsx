@@ -1,8 +1,7 @@
 "use client"
 
-import { MapPin, Calendar, Users, Star, Bed, Utensils, Car, Clock, Award, Home } from "lucide-react"
+import { MapPin, Calendar, Users, Star, Bed, Utensils, Car, Clock, Award, Home, Link } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
 import {
   Breadcrumb,
@@ -27,9 +26,9 @@ export default function PackageDetailPage({ params }: { params: Promise<{ id: st
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-gray-900 mb-4">Package Not Found</h1>
-          <p className="text-gray-600 mb-8">The package you're looking for doesn't exist.</p>
+          <p className="text-gray-600 mb-8">The package you&apos;re looking for doesn&apos;t exist.</p>
           <Button asChild>
-            <a href="/packages">Back to Packages</a>
+            <Link href="/packages">Back to Packages</Link>
           </Button>
         </div>
       </div>
@@ -164,7 +163,7 @@ export default function PackageDetailPage({ params }: { params: Promise<{ id: st
 
               {/* Inclusions */}
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">What's Included</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">What&apos;s Included</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   {pkg.inclusions.map((inclusion, index) => (
                     <div key={index} className="flex items-center">

@@ -7,9 +7,10 @@ import { ChevronLeft, ChevronRight, Clock, Users, MapPin } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { dayTours } from "@/data/packages"
 import Link from "next/link"
+import Image from "next/image"
 
 // Transform day tours into unified format
-const tours = dayTours.map((tour, index) => ({
+const tours = dayTours.map((tour) => ({  
   id: tour.id,
   title: tour.name,
   category: tour.category,
@@ -118,13 +119,13 @@ export default function ToursSection() {
 
   return (
     <section className="py-16 lg:py-24 bg-white">
-      {/* Industry Standard Container */}
+      {/* Industry Standard Container */}     
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header - Responsive Positioning */}
         <div className="mb-8 lg:mb-16">
           <div className="flex items-start justify-between gap-4">
             <div className="flex-1">
-              <span className="inline-block px-3 py-1 bg-slate-100 text-slate-700 text-sm font-medium rounded-full mb-3">
+              <span className="inline-block px-3 py-1 bg-slate-100 text-foreground text-sm font-medium rounded-full mb-3">
                 Featured Tours
               </span>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-foreground mb-2 lg:mb-3 tracking-tight leading-tight">
@@ -198,10 +199,12 @@ export default function ToursSection() {
                   prefetch={false}
                 >
                   <div className="aspect-[4/5] relative overflow-hidden">
-                    <img
+                    <Image
                       src={tour.image || "/placeholder.svg"}
                       alt={tour.title}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      width={100}
+                      height={100}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
 
@@ -217,7 +220,7 @@ export default function ToursSection() {
                       <div className="flex items-center gap-2 mb-2">
                         <div className="flex items-center gap-1 text-white/80 text-xs">
                           <MapPin className="w-3 h-3" />
-                          <span>{tour.location}</span> { tour.id }
+                          <span>{tour.location}</span> 
                         </div>
                       </div>
 

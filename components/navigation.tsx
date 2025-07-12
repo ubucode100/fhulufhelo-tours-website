@@ -1,10 +1,11 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Menu, X, ChevronDown, MessageCircle, Phone } from "lucide-react"
+import { Menu, X, MessageCircle } from "lucide-react" 
 import { Button } from "@/components/ui/button"
 import { company } from "@/data/packages"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -35,9 +36,11 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center gap-3">
-            <img 
+            <Image 
               src="/logo.jpg" 
               alt="Fhulufhelo Tours Logo" 
+              width={100}
+              height={100}
               className="h-8 w-8 md:h-10 md:w-10 object-contain"
             />
             <h1 className="font-semibold tracking-wide">
