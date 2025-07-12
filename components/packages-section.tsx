@@ -1,6 +1,6 @@
 "use client"
 
-import { MapPin, Calendar } from "lucide-react"
+import { MapPin, Calendar, PawPrint } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 
@@ -73,9 +73,13 @@ export default function PackagesSection() {
         <div className="mb-12 lg:mb-16">
           <div className="flex items-start justify-between">
             <div className="flex-1">
-              <span className="inline-block px-3 py-1 bg-white text-foreground text-sm font-medium rounded-full mb-4">
-                Safari Packages
-              </span>
+              <div className="inline-flex items-center gap-2 bg-primary/10 rounded-full px-3 py-1">
+                <PawPrint className="text-primary h-5 w-5" />
+                <span className="text-sm font-medium text-primary">
+                  Safari Packages
+                </span>
+              </div>
+
               <h2 className="text-3xl lg:text-5xl font-medium text-foreground mb-4 tracking-tight leading-tight">
                 Multi-Day Adventures
               </h2>

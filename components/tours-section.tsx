@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { ChevronLeft, ChevronRight, MapPin, Clock } from 'lucide-react'
+import { ChevronLeft, ChevronRight, MapPin, Clock, BadgeCheck, TramFront } from 'lucide-react'
 import { useEventListener, useKeyPress } from '@uidotdev/usehooks'
 import { dayTours } from '@/data/packages'
 
@@ -84,9 +84,13 @@ export default function ToursSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 lg:mb-12">
         <div className="flex items-end justify-between gap-4">
           <div className="flex-1">
-            <span className="inline-block px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm mb-3">
-              Featured Day Tours
-            </span>
+            <div className="inline-flex items-center gap-2 bg-primary/10 rounded-full px-3 py-1">
+              <TramFront className="text-primary h-5 w-5" />
+              <span className="text-sm font-medium text-primary">
+                Featured Day Tours
+              </span>
+            </div>
+
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-foreground mb-2 lg:mb-3 tracking-tight">
               Experience the Magic
             </h2>

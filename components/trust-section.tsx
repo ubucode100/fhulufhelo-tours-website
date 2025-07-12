@@ -1,5 +1,8 @@
 "use client"
 
+import { BadgeCheck } from "lucide-react"
+import { Badge } from "./ui/badge"
+
 const trustStats = [
   {
     number: "25+",
@@ -32,9 +35,15 @@ export default function TrustSection() {
         <div className="mb-12 lg:mb-16">
           <div className="flex items-start justify-between">
             <div className="flex-1">
-              <span className="inline-block px-3 py-1 bg-slate-100 text-slate-700 text-sm font-medium rounded-full mb-4">
-                Why Choose Us
-              </span>
+
+              <div className="inline-flex items-center gap-2 bg-primary/10 rounded-full px-3 py-1">
+                <BadgeCheck className="text-primary h-5 w-5" />
+                <span className="text-sm font-medium text-primary">
+                  Why Choose Us
+                </span>
+              </div>
+
+
               <h2 className="text-3xl lg:text-5xl font-medium text-foreground mb-4 tracking-tight leading-tight">
                 Trusted by Thousands
               </h2>

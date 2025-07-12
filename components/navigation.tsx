@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { company } from "@/data/packages"
 import Link from "next/link"
 import Image from "next/image"
+import { usePathname } from "next/navigation"
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -15,8 +16,6 @@ export default function Navigation() {
     { name: "Home", href: "/" },
     { name: "Day Tours", href: "/day-tours" },
     { name: "Packages", href: "/packages" },
-    { name: "Transfer ", href: "/transfers" },
-    { name: "Contact", href: "#footer" },
   ]
 
   useEffect(() => {
@@ -60,190 +59,141 @@ export default function Navigation() {
     }
   }, [isMenuOpen])
 
+  // Use Next.js navigation for SSR-safe active state
+  const pathname = usePathname()
+
+  function isActive(href: string) {
+    return pathname === href
+  }
+
   return (
     <>
       {/* Main Navigation */}
-      <nav
-        className={`fixed inset-x-0 top-0 z-40 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'
-          } ${isMenuOpen ? 'lg:block hidden' : ''}`}
-      >
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex h-16 items-center justify-between">
-            {/* Logo */}
-            <div className="flex flex-shrink-0 items-center">
-              <Link href="/" className="flex items-center gap-3">
-                <Image
-                  src="/logo.jpg"
-                  alt="Fhulufhelo Tours Logo"
-                  width={40}
-                  height={40}
-                  className="h-8 w-8 lg:h-10 lg:w-10 object-contain"
-                />
-                <span className={`text-lg font-semibold tracking-tight ${isScrolled ? 'text-gray-900' : 'text-white'
-                  }`}>
-                  Fhulufhelo Tours
-                </span>
-              </Link>
-            </div>
+      <nav className="fixed inset-x-0 top-0 z-40 bg-base py-4">
+        <div className="mx-auto max-w-7xl flex items-center justify-between bg-background rounded-md  px-4 py-2">
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-2">
+            <Image
+              src="/logo.jpg"
+              alt="Fhulufhelo Tours Logo"
+              width={42}
+              height={42}
+              className="h-8 w-8 lg:h-12 lg:w-12 object-contain"
+            />
+            <span className="text-lg tracking-tight text-foreground font-['Georgia'] font-medium antialiased">
+              Fhulufhelo Tours
+            </span>
+          </Link>
 
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex lg:gap-x-8">
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center flex-1 justify-center">
+            <div className="flex gap-1">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`text-sm/6 transition-colors duration-200 hover:text-orange-400 ${isScrolled ? 'text-gray-900' : 'text-white'
+                  className={`px-5 py-1 rounded-full transition-colors duration-200 text-sm
+                    ${isActive(link.href)
+                      ? "bg-foreground text-white shadow"
+                      : "text-foreground hover:bg-gray-100"
                     }`}
                 >
                   {link.name}
                 </Link>
               ))}
             </div>
-
-            {/* WhatsApp Button & Mobile Menu */}
-            <div className="flex items-center gap-4">
-              {/* WhatsApp Button - Desktop */}
-              <Button
-                variant="ghost"
-                size="sm"
-                className="hidden lg:flex items-center gap-2 text-green-700 px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 cursor-pointer hover:border-green-700"
-                onClick={() =>
-                  window.open(
-                    'https://wa.me/27727777777?text=Hi! I\'m interested in your tours',
-                    '_blank'
-                  )
-                }
-              >
-                <Image
-                  src="/Digital_Glyph_Green.svg"
-                  alt="WhatsApp"
-                  width={20}
-                  height={20}
-                  className="h-5 w-5"
-                  priority={false}
-                />
-                +27 72 777 7777
-              </Button>
-
-              {/* Mobile menu button */}
-              <button
-                type="button"
-                onClick={() => setIsMenuOpen(true)}
-                className={`lg:hidden -m-2.5 inline-flex items-center justify-center rounded-md p-2.5 transition-colors duration-200 ${isScrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-white hover:bg-white/10'
-                  }`}
-                aria-expanded={isMenuOpen}
-              >
-                <span className="sr-only">Open main menu</span>
-                <Menu aria-hidden="true" className="h-6 w-6" />
-              </button>
-            </div>
           </div>
+
+          {/* WhatsApp Button - Desktop */}
+          <div className="hidden lg:flex items-center">
+            <Button
+              variant="outline"
+              className="flex items-center gap-2 bg-green-600 text-white rounded-full px-4 py-2 text-base shadow hover:bg-green-700 transition"
+              onClick={() =>
+                window.open(
+                  'https://wa.me/27727777777?text=Hi! I\'m interested in your tours',
+                  '_blank'
+                )
+              }
+            >
+              <Image
+                src="/Digital_Glyph_Green.svg"
+                alt="WhatsApp"
+                width={20}
+                height={20}
+                className="h-5 w-5"
+                priority={false}
+              />
+              +27 72 777 7777
+            </Button>
+          </div>
+
+          {/* Mobile menu button */}
+          <button
+            type="button"
+            onClick={() => setIsMenuOpen(true)}
+            className="lg:hidden inline-flex items-center justify-center rounded-full p-2 bg-gray-100 text-gray-700 shadow"
+            aria-expanded={isMenuOpen}
+          >
+            <span className="sr-only">Open main menu</span>
+            <Menu aria-hidden="true" className="h-6 w-6" />
+          </button>
         </div>
       </nav>
 
       {/* Mobile Navigation Overlay */}
       {isMenuOpen && (
-        <div className="lg:hidden">
-          {/* Backdrop */}
-          <div
-            className="fixed inset-0 z-50 bg-black/50 transition-opacity duration-300"
-            onClick={() => setIsMenuOpen(false)}
-            aria-hidden="true"
-          />
-
-          {/* Mobile Menu Panel */}
-          <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-            <div className="flex min-h-full flex-col">
-              {/* Mobile Header */}
-              <div className="flex items-center justify-between p-6 border-b border-gray-200">
+        <div className="lg:hidden fixed inset-0 z-50 bg-black/40 flex flex-col">
+          {/* Top bar with close */}
+          <div className="flex items-center justify-between bg-base/90 px-4 py-3">
+            <Link href="/" className="flex items-center gap-2" onClick={() => setIsMenuOpen(false)}>
+              <Image src="/logo.jpg" alt="Fhulufhelo Tours Logo" width={32} height={32} className="h-8 w-8 object-contain" />
+              <span className="text-lg font-bold text-foreground">Fhulufhelo Tours</span>
+            </Link>
+            <button
+              type="button"
+              onClick={() => setIsMenuOpen(false)}
+              className="rounded-full p-2 text-gray-700 bg-white/80 shadow"
+            >
+              <span className="sr-only">Close menu</span>
+              <X aria-hidden="true" className="h-6 w-6" />
+            </button>
+          </div>
+          {/* Nav links */}
+          <div className="flex-1 flex flex-col items-center justify-center">
+            <div className="bg-white/90 rounded-full shadow px-2 py-1 flex flex-col w-11/12 max-w-xs gap-1">
+              {navLinks.map((link) => (
                 <Link
-                  href="/"
-                  className="flex items-center gap-3"
+                  key={link.name}
+                  href={link.href}
+                  className={`w-full text-center px-4 py-2 rounded-full transition-colors duration-200 font-semibold text-sm
+                    ${isActive(link.href)
+                      ? "bg-foreground text-white shadow"
+                      : "text-gray-700 hover:bg-gray-100"
+                    }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  <Image
-                    src="/logo.jpg"
-                    alt="Fhulufhelo Tours Logo"
-                    width={32}
-                    height={32}
-                    className="h-8 w-8 object-contain"
-                  />
-                  <span className="text-lg font-semibold text-gray-900">
-                    Fhulufhelo Tours
-                  </span>
+                  {link.name}
                 </Link>
-                <button
-                  type="button"
-                  onClick={() => setIsMenuOpen(false)}
-                  className="-m-2.5 rounded-md p-2.5 text-gray-700 hover:bg-gray-100 transition-colors duration-200"
-                >
-                  <span className="sr-only">Close menu</span>
-                  <X aria-hidden="true" className="h-6 w-6" />
-                </button>
-              </div>
-
-              {/* Navigation Links */}
-              <div className="flex-1 px-6 py-6">
-                <div className="space-y-1">
-                  {navLinks.map((link) => (
-                    <Link
-                      key={link.name}
-                      href={link.href}
-                      className="block rounded-lg px-3 py-3 text-base font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-200"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {link.name}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-
-              {/* Mobile Contact Section */}
-              <div className="border-t border-gray-200 p-6">
-                <button
-                  onClick={() => {
-                    window.open('https://wa.me/27123456789?text=Hi! I\'m interested in your tours', '_blank')
-                    setIsMenuOpen(false)
-                  }}
-                  className="flex w-full items-center justify-center gap-3 rounded-lg bg-green-600 px-3 py-3 text-base font-semibold text-white hover:bg-green-700 transition-colors duration-200"
-                >
-                  <Image
-                    src="/Digital_Glyph_Green.svg"
-                    alt="WhatsApp"
-                    width={20}
-                    height={20}
-                    className="h-5 w-5"
-                    priority
-                  />
-                  Contact via WhatsApp
-                </button>
-
-                <div className="mt-6 space-y-3 text-sm">
-                  <div className="flex items-center gap-2">
-                    <span className="font-medium text-gray-900">Call:</span>
-                    <a
-                      href={`tel:${company.contact.phone}`}
-                      className="text-orange-600 hover:text-orange-700 transition-colors duration-200"
-                    >
-                      {company.contact.phone}
-                    </a>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="font-medium text-gray-900">Email:</span>
-                    <a
-                      href="mailto:info@fhulufhelotours.com"
-                      className="text-orange-600 hover:text-orange-700 transition-colors duration-200"
-                    >
-                      info@fhulufhelotours.com
-                    </a>
-                  </div>
-                  <div className="text-xs text-gray-500 pt-3 border-t border-gray-200">
-                    <p className="font-medium">25 Years of South African Adventures</p>
-                    <p className="mt-1">TTOS Registered • Visa Services Available</p>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
+            <Button
+              className="mt-6 w-11/12 max-w-xs flex items-center justify-center gap-2 bg-green-600 text-white rounded-full px-4 py-2 text-base font-semibold shadow hover:bg-green-700 transition"
+              onClick={() => {
+                window.open('https://wa.me/27727777777?text=Hi! I\'m interested in your tours', '_blank')
+                setIsMenuOpen(false)
+              }}
+            >
+              <Image
+                src="/Digital_Glyph_Green.svg"
+                alt="WhatsApp"
+                width={20}
+                height={20}
+                className="h-5 w-5"
+                priority
+              />
+              +27 72 777 7777
+            </Button>
           </div>
         </div>
       )}
