@@ -12,13 +12,15 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
-import { WhatsAppButton } from "@/components/whatsapp-button"
+import WhatsAppButton from "@/components/whatsapp-button"
 import { SwipeableGallery } from "@/components/swipeable-gallery"
 import { tourPackages } from "@/data/packages"
+import { use } from "react"
 
-export default function PackageDetailPage({ params }: { params: { id: string } }) {
-  // Find the package by ID
-  const pkg = tourPackages.find((p) => p.id === params.id)
+export default function PackageDetailPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = use(params)
+
+  const pkg = tourPackages.find((p) => p.id === id)
 
   if (!pkg) {
     return (
@@ -247,9 +249,6 @@ export default function PackageDetailPage({ params }: { params: { id: string } }
           </div>
         </div>
       </div>
-
-      {/* Floating WhatsApp Button */}
-      <WhatsAppButton variant="floating" tourName={pkg.name} />
 
       {/* Add padding to prevent content from being hidden behind sticky bar */}
       <div className="lg:hidden h-20"></div>
