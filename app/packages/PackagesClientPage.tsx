@@ -204,7 +204,7 @@ export default function PackagesPageClient() {
                     Premium South African Safari Experiences
                   </h2>
                   <p className="text-gray-700 mb-4">
-                    Discover South Africa's incredible wildlife with our carefully curated safari packages. From the
+                    Discover South Africa&apos;s incredible wildlife with our carefully curated safari packages. From the
                     malaria-free Pilanesberg Game Park to the iconic Kruger National Park, each package offers unique
                     experiences with the Big 5, luxury accommodations, and expert guides.
                   </p>
@@ -232,7 +232,7 @@ export default function PackagesPageClient() {
           {/* Packages Grid */}
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div className="space-y-24">
-              {tourPackages.map((pkg, index) => (
+              {tourPackages.map((pkg) => (
                 <article className="space-y-4" key={pkg.id}>
                   <header>
                     <h2 className="text-3xl md:block hidden lg:text-4xl font-medium text-foreground tracking-tight leading-tight">
@@ -244,7 +244,7 @@ export default function PackagesPageClient() {
                   {/* SEO Content for each package */}
                   <div className="mt-6 prose max-w-none">
                     <div className="bg-gray-50 rounded-lg p-6">
-                      <h3 className="text-xl font-semibold mb-3">What's Included in {pkg.name}</h3>
+                      <h3 className="text-xl font-semibold mb-3">What&apos;s Included in {pkg.name}</h3>
                       <div className="grid md:grid-cols-2 gap-6">
                         <div>
                           <h4 className="font-medium mb-2">Package Highlights:</h4>

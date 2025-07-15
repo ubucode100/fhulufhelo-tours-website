@@ -190,7 +190,7 @@ export default function DayToursPageClient() {
                   <p className="text-gray-700 mb-4">
                     Experience the best of South African culture, history, and wildlife with our expertly guided day
                     tours. From the vibrant townships of Soweto to the historic Apartheid Museum, each tour offers
-                    unique insights into South Africa's rich heritage and natural beauty.
+                    unique insights into South Africa&apos;s rich heritage and natural beauty.
                   </p>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
                     <div className="flex items-center gap-2">
@@ -228,7 +228,7 @@ export default function DayToursPageClient() {
                   {/* SEO Content for each tour */}
                   <div className="mt-6 prose max-w-none">
                     <div className="bg-gray-50 rounded-lg p-6">
-                      <h3 className="text-xl font-semibold mb-3">What's Included in {tour.name}</h3>
+                      <h3 className="text-xl font-semibold mb-3">What&apos;s Included in {tour.name}</h3>
                       <div className="grid md:grid-cols-2 gap-6">
                         <div>
                           <h4 className="font-medium mb-2">Tour Highlights:</h4>
@@ -279,7 +279,7 @@ export default function DayToursPageClient() {
                 <div>
                   <h3 className="font-semibold mb-2">Are day tours suitable for children?</h3>
                   <p className="text-sm text-gray-600 mb-4">
-                    Most tours are family-friendly with minimum age requirements varying by tour. Children's pricing is
+                    Most tours are family-friendly with minimum age requirements varying by tour. Children&apos;s pricing is
                     available for most experiences.
                   </p>
 

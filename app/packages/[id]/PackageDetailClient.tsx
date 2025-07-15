@@ -56,7 +56,7 @@ export default function PackageDetailClient({ packageData: pkg }: PackageDetailC
             },
             duration: pkg.duration,
             touristType: "Wildlife Enthusiast",
-            itinerary: pkg.itinerary?.map((day, index) => ({
+            itinerary: pkg.itinerary?.map((day) => ({
               "@type": "Action",
               name: day.title,
               description: day.description,
