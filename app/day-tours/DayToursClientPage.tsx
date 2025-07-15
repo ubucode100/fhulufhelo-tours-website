@@ -216,7 +216,7 @@ export default function DayToursPageClient() {
           {/* Tours Grid */}
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div className="space-y-24">
-              {dayTours.map((tour, index) => (
+              {dayTours.map((tour) => (
                 <article className="space-y-4" key={tour.id}>
                   <header>
                     <h2 className="md:block hidden text-3xl lg:text-4xl font-medium text-foreground tracking-tight leading-tight">
