@@ -370,8 +370,8 @@ export const dayTours = [
       }
     ],
     images: [
-      "/images/daytours/sowetotour_local_community_visit.webp",
       "/images/daytours/sowetotour_towers.jpeg",
+      "/images/daytours/sowetotour_local_community_visit.webp",
       "/images/daytours/sowetotour_Hector_P_Memorial.jpg",
       "/images/daytours/sowetotour_mandela_house.jpg",
       "/images/daytours/sowetotour_vilakazi_stret.jpg"
@@ -445,7 +445,7 @@ export const dayTours = [
       }
     ],
     images: [
-      "/images/daytours/jhb_innter_city_1.jpg",
+      "/images/daytours/hillbrow_tower.jpg",
       "/images/daytours/jhb_innter_city_2.jpg",
       "/images/daytours/jhb_innter_city_3.jpg",
       "/images/daytours/jhb_innter_city_4.jpg",
@@ -523,7 +523,7 @@ export const dayTours = [
       }
     ],
     images: [
-      "/images/daytours/grc_1.webp",
+      "/images/daytours/Gold-Reef-2.jpg",
       "/images/daytours/grc_2.png",
       "/images/daytours/grc_3.webp",
       "/images/daytours/grc_4.jpg",
@@ -594,7 +594,7 @@ export const dayTours = [
       }
     ],
     images: [
-      "/images/daytours/apartheid_museum.webp",
+      "/images/daytours/brick-wall-black-white-sign-apartheid-museum-pillars-other-conceptual-words-johannesburg-south-africa-august-252665388.webp",
       "/images/daytours/apartheid_museum_1.webp",
       "/images/daytours/apartheid_museum_2.webp",
       "/images/daytours/apartheid_museum_3.webp",

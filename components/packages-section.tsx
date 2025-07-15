@@ -63,8 +63,6 @@ const packages = [
 ]
 
 export default function PackagesSection() {
-
-
   return (
     <section className="py-16 lg:py-24 bg-slate-50">
       {/* Industry Standard Container */}
@@ -75,11 +73,8 @@ export default function PackagesSection() {
             <div className="flex-1">
               <div className="inline-flex items-center gap-2 bg-primary/10 rounded-full px-3 py-1">
                 <PawPrint className="text-primary h-5 w-5" />
-                <span className="text-sm font-medium text-primary">
-                  Safari Packages
-                </span>
+                <span className="text-sm font-medium text-primary">Safari Packages</span>
               </div>
-
               <h2 className="text-3xl lg:text-5xl font-medium text-foreground mb-4 tracking-tight leading-tight">
                 Multi-Day Adventures
               </h2>
@@ -93,7 +88,7 @@ export default function PackagesSection() {
 
         {/* Packages Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-          {packages.map((pkg) => (
+          {packages.map((pkg, index) => (
             <div
               key={pkg.id}
               className="group relative overflow-hidden rounded-3xl bg-white shadow-xl hover:shadow-2xl transition-all duration-700 hover:-translate-y-3"
@@ -101,10 +96,12 @@ export default function PackagesSection() {
               <div className="aspect-[4/5] relative overflow-hidden">
                 <Image
                   src={pkg.image || "/placeholder.svg"}
-                  alt={pkg.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  width={100}
-                  height={100}
+                  alt={`${pkg.title} - ${pkg.category} experience in ${pkg.location}`}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 50vw"
+                  priority={index < 2} // Prioritize first two images
+                  quality={90}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
@@ -131,15 +128,19 @@ export default function PackagesSection() {
                       <span>{pkg.location}</span>
                     </div>
                   </div>
-
                   <h3 className="text-2xl lg:text-3xl font-medium text-white mb-3 leading-tight">{pkg.title}</h3>
-
                   <p className="text-white/90 text-base mb-8 leading-relaxed font-light">{pkg.description}</p>
 
                   {/* CTA Button */}
                   <Button
                     size="lg"
                     className="w-full bg-white text-foreground hover:bg-white/90 px-8 py-4 rounded-full text-base font-medium shadow-lg hover:shadow-xl transition-all duration-300"
+                    onClick={() =>
+                      window.open(
+                        `https://wa.me/27822585189?text=Hi! I need a quote for one of your tours ${pkg.title}`,
+                        "_blank",
+                      )
+                    }
                   >
                     Get A Quote
                   </Button>
@@ -148,22 +149,6 @@ export default function PackagesSection() {
             </div>
           ))}
         </div>
-
-        {/* Bottom CTA */}
-        {/* <div className="text-center mt-16 lg:mt-20">
-          <div className="bg-white rounded-2xl p-8 lg:p-12 shadow-lg max-w-2xl mx-auto">
-            <h3 className="text-2xl lg:text-3xl font-medium text-foreground mb-4">Need a Custom Package?</h3>
-            <p className="text-foreground/50 mb-6 leading-relaxed">
-              Let us create a personalized safari experience tailored to your preferences, budget, and travel dates.
-            </p>
-            <Button
-              size="lg"
-              className="bg-slate-900 hover:bg-slate-800 text-white px-8 py-4 rounded-full text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300"
-            >
-              Contact Our Safari Experts
-            </Button>
-          </div>
-        </div> */}
       </div>
     </section>
   )

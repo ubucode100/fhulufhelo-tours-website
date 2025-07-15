@@ -1,4 +1,7 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
+import Link from "next/link";
 
 /**
  * Hero section for the homepage.
@@ -64,17 +67,26 @@ export default function Hero() {
               <Button
                 size="lg"
                 className="rounded-md bg-white px-6 py-3 text-sm text-black hover:bg-white/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-all duration-200 group cursor-pointer"
+                onClick={() =>
+                  window.open(
+                    'https://wa.me/27822585189?text=Hi! I need a quote for your tours',
+                    '_blank'
+                  )
+                }
               >
                 Get a Quote
               </Button>
 
-              <Button
-                size="lg"
-                variant="ghost"
-                className="text-sm text-white hover:text-white/80 hover:bg-white/10 px-6 py-3 rounded-md transition-all duration-200 group cursor-pointer"
-              >
-                Browse Tours
-              </Button>
+              <Link href="/day-tours" passHref>
+                <Button
+                  size="lg"
+                  variant="ghost"
+                  className="text-sm text-white hover:text-white/80 hover:bg-white/10 px-6 py-3 rounded-md transition-all duration-200 group cursor-pointer"
+                >
+                  Browse Tours
+                </Button>
+              </Link>
+
             </div>
           </div>
         </div>
