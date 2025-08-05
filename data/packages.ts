@@ -1282,9 +1282,9 @@ export const company = {
     processingTime: "2-5 working days processing time"
   },
   contact: {
-    whatsapp: "+27 82 123 4567",
+    whatsapp: "+27 64 557 8406",
     email: "info@fhulufhelotours.co.za",
-    phone: "+27 11 234 5678"
+    phone: "+27 64 557 8406"
   },
   experience: {
     years: 25,
@@ -1505,8 +1505,8 @@ export const booking = {
   contact: {
     primary: "WhatsApp",
     whatsapp: "+27 82 123 4567",
-    email: "bookings@fhulufhelotours.co.za",
-    phone: "+27 11 234 5678",
+    email: "info@fhulufhelotours.co.za",
+    phone: "+27 64 557 8406",
     responseTime: "Within 2 hours during business hours"
   },
   payment: {
