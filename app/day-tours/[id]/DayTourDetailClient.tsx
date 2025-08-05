@@ -20,17 +20,11 @@ interface DayTourDetailClientProps {
 }
 
 export default function DayTourDetailClient({ tourData: tour }: DayTourDetailClientProps) {
-  const handleBookNow = () => {
-    if (
-      typeof window !== "undefined" &&
-      window.BookSAWidget &&
-      tour.listingId
-    ) {
-      window.BookSAWidget.open(tour.listingId.toString());
-    } else {
-      console.error('BookSAWidget not available or listing ID missing');
-    }
-  };
+  const handleGetQuote = () => {
+    const url = `https://wa.me/27645578406?text=Hi! I'm interested in the ${tour.name} tour. Could you send me a quote?`
+    window.open(url, '_blank')
+  }
+  
   return (
     <>
       {/* Structured Data for Individual Day Tour */}
@@ -309,8 +303,8 @@ export default function DayTourDetailClient({ tourData: tour }: DayTourDetailCli
                     </div>
                   </div>
                   <Button 
-                onClick={() => handleBookNow()} className="w-full rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 mb-4">
-                    Book This Tour
+                onClick={() => handleGetQuote()} className="w-full rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 mb-4">
+                    Get A Quote
                   </Button>
                   <WhatsAppButton className="w-full rounded-full" />
                 </div>
@@ -329,8 +323,8 @@ export default function DayTourDetailClient({ tourData: tour }: DayTourDetailCli
             <div className="flex gap-2">
               <WhatsAppButton className="rounded-full px-4" />
               <Button
-                onClick={() => handleBookNow()} className="rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6">
-                Book Now
+                onClick={() => handleGetQuote()} className="rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6">
+                 Get A Quote
               </Button>
             </div>
           </div>
