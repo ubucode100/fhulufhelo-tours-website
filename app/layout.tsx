@@ -4,6 +4,7 @@ import { Poppins } from "next/font/google"
 import "./globals.css"
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
+import BookSAScript from "@/components/booksa"
 
 // Configure Poppins font with multiple weights for high quality
 const poppins = Poppins({
@@ -375,6 +376,7 @@ export default function RootLayout({
         <Navigation />
         {children}
         <Footer />
+        <BookSAScript />
       </body>
     </html>
   )

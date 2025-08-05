@@ -20,6 +20,17 @@ interface DayTourDetailClientProps {
 }
 
 export default function DayTourDetailClient({ tourData: tour }: DayTourDetailClientProps) {
+  const handleBookNow = () => {
+    if (
+      typeof window !== "undefined" &&
+      window.BookSAWidget &&
+      tour.listingId
+    ) {
+      window.BookSAWidget.open(tour.listingId.toString());
+    } else {
+      console.error('BookSAWidget not available or listing ID missing');
+    }
+  };
   return (
     <>
       {/* Structured Data for Individual Day Tour */}
@@ -47,8 +58,6 @@ export default function DayTourDetailClient({ tourData: tour }: DayTourDetailCli
               price: tour.price.adult,
               priceCurrency: tour.price.currency,
               availability: "https://schema.org/InStock",
-              validFrom: new Date().toISOString(),
-              priceValidUntil: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString(),
               seller: {
                 "@type": "TravelAgency",
                 name: "Fhulufhelo Tours",
@@ -243,7 +252,7 @@ export default function DayTourDetailClient({ tourData: tour }: DayTourDetailCli
                 </div>
 
                 {/* Itinerary */}
-{/*                 <div className="mb-8">
+                {/*                 <div className="mb-8">
                   <h3 className="text-xl text-foreground mb-4">Tour Schedule</h3>
                   <div className="space-y-4">
                     {tour.itinerary.map((item: { time: string; title: string; description: string }, index: number) => (
@@ -299,7 +308,8 @@ export default function DayTourDetailClient({ tourData: tour }: DayTourDetailCli
                       <span className="font-semibold text-gray-900">{tour.minAge} years</span>
                     </div>
                   </div>
-                  <Button className="w-full rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 mb-4">
+                  <Button 
+                onClick={() => handleBookNow()} className="w-full rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 mb-4">
                     Book This Tour
                   </Button>
                   <WhatsAppButton className="w-full rounded-full" />
@@ -318,7 +328,8 @@ export default function DayTourDetailClient({ tourData: tour }: DayTourDetailCli
             </div>
             <div className="flex gap-2">
               <WhatsAppButton className="rounded-full px-4" />
-              <Button className="rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6">
+              <Button
+                onClick={() => handleBookNow()} className="rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6">
                 Book Now
               </Button>
             </div>

@@ -47,8 +47,6 @@ export default function PackageDetailClient({ packageData: pkg }: PackageDetailC
               price: pkg.price,
               priceCurrency: "ZAR",
               availability: "https://schema.org/InStock",
-              validFrom: new Date().toISOString(),
-              priceValidUntil: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString(),
               seller: {
                 "@type": "TravelAgency",
                 name: "Fhulufhelo Tours",
@@ -343,7 +341,13 @@ export default function PackageDetailClient({ packageData: pkg }: PackageDetailC
                       <span className="font-semibold text-gray-900">{pkg.difficulty}</span>
                     </div>
                   </div>
-                  <Button className="w-full rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 mb-4">
+                  <Button className="w-full rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 mb-4"
+                    onClick={() =>
+                      window.open(
+                        `https://wa.me/27645578406?text=Hi! I need a quote for one of your tours ${pkg.name}`,
+                        "_blank",
+                      )
+                    }>
                     Get A Quote
                   </Button>
                   <WhatsAppButton className="w-full rounded-full" />

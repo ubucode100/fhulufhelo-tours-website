@@ -132,8 +132,6 @@ export default function PackagesPageClient() {
                   price: pkg.price,
                   priceCurrency: "ZAR",
                   availability: "https://schema.org/InStock",
-                  validFrom: new Date().toISOString(),
-                  priceValidUntil: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString(),
                 },
                 duration: pkg.duration,
                 touristType: "Wildlife Enthusiast",

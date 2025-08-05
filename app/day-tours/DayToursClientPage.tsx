@@ -129,8 +129,6 @@ export default function DayToursPageClient() {
                   price: tour.price.adult,
                   priceCurrency: tour.price.currency,
                   availability: "https://schema.org/InStock",
-                  validFrom: new Date().toISOString(),
-                  priceValidUntil: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString(),
                 },
                 duration: tour.duration,
                 touristType: tour.category === "Cultural" ? "Cultural Tourist" : "Adventure Tourist",

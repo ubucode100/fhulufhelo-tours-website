@@ -10,6 +10,7 @@
 export const tourPackages = [
   {
     id: "pilanesberg-wildlife",
+    listingId: 22,
     name: "Pilanesberg Game Park Wildlife Experience",
     description:
       "Experience the Big 5 wildlife at Pilanesberg Game Park with luxury accommodation and guided game drives. This exclusive safari package offers the perfect blend of adventure and comfort in one of South Africa's premier game reserves, located in a malaria-free area.",
@@ -73,6 +74,7 @@ export const tourPackages = [
   },
   {
     id: "madikwe-wildlife",
+    listingId: 23,
     name: "Madikwe Game Park Wildlife Experience",
     description:
       "Experience the exclusive Madikwe Game Park with its diverse wildlife and luxury safari lodges. This malaria-free reserve offers exceptional game viewing opportunities with personalized service and world-class accommodation in one of South Africa's premier private reserves.",
@@ -137,6 +139,7 @@ export const tourPackages = [
   },
   {
     id: "kruger-panorama",
+    listingId: 24,
     name: "Kruger National Park & Panorama Route Experience",
     description:
       "Combine the iconic Kruger National Park with the scenic Panorama Route for an unforgettable South African experience. This comprehensive package showcases the best of wildlife and landscapes, including the famous Blyde River Canyon and God's Window.",
@@ -205,6 +208,7 @@ export const tourPackages = [
   },
   {
     id: "triland-route",
+    listingId: 25,
     name: "Triland Route Experience",
     description:
       "Experience the ultimate Southern African adventure covering three countries: Mpumalanga (South Africa), eSwatini, and Mozambique. This comprehensive 7-day journey combines nature, wildlife, culture, and leisure in an unforgettable multi-country experience.",
@@ -298,11 +302,12 @@ export const tourPackages = [
 export const dayTours = [
   {
     id: "soweto-tour",
+    listingId: 10,
     name: "Soweto Tour",
     duration: "Full Day",
     pickupTime: "08:00",
     returnTime: "17:00",
-    price: { adult: 850, child: 650, currency: "ZAR" },
+    price: { adult: 850/* , child: 650 */, currency: "ZAR" },
     description: "Experience the vibrant culture and rich history of Soweto, including visits to Vilakazi Street, Mandela House, and the Hector Pieterson Memorial.",
     highlights: [
       "Vilakazi Street",
@@ -379,6 +384,7 @@ export const dayTours = [
   },
   {
     id: "johannesburg-inner-city-tour",
+    listingId: 11,
     name: "Johannesburg Inner City Tour",
     duration: "Full Day",
     pickupTime: "09:00",
@@ -456,6 +462,7 @@ export const dayTours = [
   },
   {
     id: "gold-reef-city-theme-park",
+    listingId: 12,
     name: "Gold Reef City AND Theme Park",
     duration: "Full Day",
     pickupTime: "09:00",
@@ -533,6 +540,7 @@ export const dayTours = [
   },
   {
     id: "apartheid-museum",
+    listingId: 13,
     name: "Apartheid Museum",
     duration: "Half Day",
     pickupTime: "09:00",
@@ -605,6 +613,7 @@ export const dayTours = [
   },
   {
     id: "pretoria-city-tour",
+    listingId: 14,
     name: "Pretoria City Tour",
     duration: "Full Day",
     pickupTime: "08:00",
@@ -686,6 +695,7 @@ export const dayTours = [
   },
   {
     id: "cullinan-diamond-mine",
+    listingId: 15,
     name: "Cullinan Diamond Mine",
     duration: "Full Day",
     pickupTime: "08:00",
@@ -769,6 +779,7 @@ export const dayTours = [
   },
   {
     id: "lion-cheetah-sanctuary",
+    listingId: 16,
     name: "Lion and Cheetah Sanctuary",
     duration: "Full Day",
     pickupTime: "08:00",
@@ -851,6 +862,7 @@ export const dayTours = [
   },
   {
     id: "elephant-sanctuary",
+    listingId: 17,
     name: "Elephant Sanctuary",
     duration: "Full Day",
     pickupTime: "08:00",
@@ -933,6 +945,7 @@ export const dayTours = [
   },
   {
     id: "ukuthula-lion-walk",
+    listingId: 18,
     name: "Ukuthula Lion Walk",
     duration: "Full Day",
     pickupTime: "08:00",
@@ -1015,6 +1028,7 @@ export const dayTours = [
   },
   {
     id: "mabula-lodge",
+    listingId: 19,
     name: "Mabula Lodge",
     duration: "Full Day",
     pickupTime: "07:00",
@@ -1098,6 +1112,7 @@ export const dayTours = [
   },
   {
     id: "pilanesberg-day-tour",
+    listingId: 20,
     name: "Pilanesberg Game Park Day Tour",
     duration: "Full Day",
     pickupTime: "07:00",
@@ -1171,6 +1186,7 @@ export const dayTours = [
   },
   {
     id: "sun-city-tour",
+    listingId: 21,
     name: "Sun City Tour",
     duration: "Full Day",
     pickupTime: "08:00",

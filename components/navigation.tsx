@@ -66,15 +66,16 @@ export default function Navigation() {
     <>
       {/* Main Navigation */}
       <nav className="fixed inset-x-0 top-0 z-40 bg-base py-4 px-4 md:px-0">
-        <div className="mx-auto max-w-7xl flex items-center justify-between bg-background rounded-md px-4 py-2">
-          {/* Logo */}
+        <div className="mx-auto max-w-7xl flex items-center justify-between bg-background rounded-md px-4 py-3">
+          {/* Logo - Made Much Bigger and More Prominent */}
           <Link href="/" className="flex items-center">
             <Image
               src="/logo.jpg"
               alt="Fhulufhelo Tours Logo"
-              width={64}
-              height={64}
-              className="h-12 w-12 lg:h-16 lg:w-16 object-contain"
+              width={72}
+              height={72}
+              className="h-14 w-14 lg:h-18 lg:w-18 object-contain"
+              priority
             />
           </Link>
 
@@ -99,7 +100,7 @@ export default function Navigation() {
             <Button
               variant="outline"
               className="flex items-center gap-2 bg-green-600 text-white rounded-full px-4 py-2 text-base shadow hover:bg-green-700 transition"
-              onClick={() => window.open("https://wa.me/27822585189?text=Hi! I'm interested in your tours", "_blank")}
+              onClick={() => window.open("https://wa.me/27645578406?text=Hi! I'm interested in your tours", "_blank")}
             >
               <Image
                 src="/Digital_Glyph_Green.svg"
@@ -109,7 +110,7 @@ export default function Navigation() {
                 className="h-5 w-5"
                 priority={false}
               />
-              +27 82 258 5189
+              +27 64 557 8406
             </Button>
           </div>
 
@@ -129,15 +130,16 @@ export default function Navigation() {
       {/* Mobile Navigation Overlay */}
       {isMenuOpen && (
         <div className="lg:hidden fixed inset-0 z-50 bg-background flex flex-col">
-          {/* Top bar with close */}
-          <div className="flex items-center justify-between bg-base/90 px-4 py-3">
+          {/* Top bar with close - Logo also bigger here */}
+          <div className="flex items-center justify-between bg-base/90 px-4 py-4">
             <Link href="/" className="flex items-center" onClick={() => setIsMenuOpen(false)}>
               <Image
                 src="/logo.jpg"
                 alt="Fhulufhelo Tours Logo"
-                width={48}
-                height={48}
-                className="h-12 w-12 object-contain"
+                width={56}
+                height={56}
+                className="h-14 w-14 object-contain"
+                priority
               />
             </Link>
             <button type="button" onClick={() => setIsMenuOpen(false)} className="p-2 text-gray-700">
@@ -164,7 +166,7 @@ export default function Navigation() {
             <Button
               className="mt-6 w-11/12 max-w-xs flex items-center justify-center gap-2 bg-green-600 text-white rounded-full px-4 py-2 text-base font-semibold shadow hover:bg-green-700 transition"
               onClick={() => {
-                window.open("https://wa.me/27822585189?text=Hi! I'm interested in your tours", "_blank")
+                window.open("https://wa.me/27645578406?text=Hi! I'm interested in your tours", "_blank")
                 setIsMenuOpen(false)
               }}
             >
@@ -176,7 +178,7 @@ export default function Navigation() {
                 className="h-5 w-5"
                 priority
               />
-              +27 82 258 5189
+              +27 64 557 8406
             </Button>
           </div>
         </div>

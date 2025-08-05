@@ -69,7 +69,7 @@ export default function Hero() {
                 className="rounded-md bg-white px-6 py-3 text-sm text-black hover:bg-white/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-all duration-200 group cursor-pointer"
                 onClick={() =>
                   window.open(
-                    'https://wa.me/27822585189?text=Hi! I need a quote for your tours',
+                    'https://wa.me/27645578406?text=Hi! I need a quote for your tours',
                     '_blank'
                   )
                 }

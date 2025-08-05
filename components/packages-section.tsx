@@ -137,7 +137,7 @@ export default function PackagesSection() {
                     className="w-full bg-white text-foreground hover:bg-white/90 px-8 py-4 rounded-full text-base font-medium shadow-lg hover:shadow-xl transition-all duration-300"
                     onClick={() =>
                       window.open(
-                        `https://wa.me/27822585189?text=Hi! I need a quote for one of your tours ${pkg.title}`,
+                        `https://wa.me/27645578406?text=Hi! I need a quote for one of your tours ${pkg.title}`,
                         "_blank",
                       )
                     }
