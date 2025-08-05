@@ -5,9 +5,43 @@ import { useEffect, useState } from "react";
 
 declare global {
   interface Window {
-    BookSAWidget: any;
+    BookSAWidget: {
+      init: (config: {
+        tenant: string;
+        showPrice?: boolean;
+        showTitle?: boolean;
+        development?: boolean;
+      }) => boolean;
+
+      open: (
+        listingIdOrOptions:
+          | string
+          | {
+              listingId: string;
+              showPrice?: boolean;
+              showTitle?: boolean;
+            },
+        options?: {
+          showPrice?: boolean;
+          showTitle?: boolean;
+        }
+      ) => boolean;
+
+      close: () => boolean;
+      isOpen: () => boolean;
+      getConfig: () =>
+        | {
+            tenant: string;
+            showPrice: boolean;
+            showTitle: boolean;
+            development: boolean;
+          }
+        | null;
+      getCurrentListing: () => string | null;
+    };
   }
 }
+
 
 const BookSAScript = () => {
   const [isClient, setIsClient] = useState(false);
