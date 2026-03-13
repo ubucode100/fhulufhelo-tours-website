@@ -1,6 +1,7 @@
 import { Phone, Mail, MapPin } from "lucide-react"
 import { dayTours, tourPackages, company } from "@/data/packages"
 import Image from "next/image"
+import KambangaBadge from "@/components/kambanga-badge"
 
 export default function Footer() {
   // Popular day tours based on actual services
@@ -172,6 +173,7 @@ export default function Footer() {
               ))}
             </div>
           </div>
+          <KambangaBadge />
         </div>
       </div>
     </footer>
