@@ -21,7 +21,7 @@ const values = [
   {
     icon: FileText,
     title: "Visa Assistance",
-    description: "TTOS certified visa processing services completed within 2-5 working days for your convenience",
+    description: "BGCSA verified visa processing services completed within 2-5 working days for your convenience",
   },
 ]
 

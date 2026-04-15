@@ -16,7 +16,7 @@ To develop a professional website that positions Fhulufhelo Tours as a leading S
 1. **Company Introduction** - Establish credibility and experience
 2. **Service Portfolio** - Three distinct service categories with clear differentiation
 3. **Quote System** - Integrated request functionality across all services
-4. **Credentials Display** - TTOS registration and visa services
+4. **Credentials Display** - Visa services and certifications
 5. **Contact Framework** - Multiple touchpoints for client engagement
 
 ## Project Goals
@@ -29,7 +29,7 @@ To develop a professional website that positions Fhulufhelo Tours as a leading S
 
 ### Secondary Objectives
 1. **Showcase Service Breadth** - Display the full range of tourism offerings
-2. **Build Trust** - Highlight TTOS credentials and visa application capabilities
+2. **Build Trust** - Highlight experience and visa application capabilities
 3. **Support Business Growth** - Create a platform that can scale with expanding services
 4. **Professional Presentation** - Reflect the quality and professionalism of 25 years in business
 

@@ -49,7 +49,7 @@ export default function Hero() {
           {/* Badge/Announcement */}
           <div className="hidden sm:mb-8 sm:flex sm:justify-center">
             <div className="relative rounded-full px-3 py-1 text-sm/6 text-white/80 ring-1 ring-white/20 hover:ring-white/30 backdrop-blur-sm transition-all duration-300">
-              TTOS Registered • 25 Years Experience
+              BGCSA Verified Business • 25 Years Experience
             </div>
           </div>
 

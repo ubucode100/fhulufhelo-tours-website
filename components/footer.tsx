@@ -19,7 +19,6 @@ export default function Footer() {
   // Company links based on actual business focus
   const companyLinks = [
     { name: "About Us", href: "/about" },
-    { name: "TTOS Registration", href: "/credentials/ttos" },
     { name: "Quote Request", href: "/quote-request" },
     { name: "Visa Services", href: "/services/visa-services" },
     { name: "Airport Transfers", href: "/services/airport-transfers" },
@@ -123,7 +122,7 @@ export default function Footer() {
                 <MapPin className="h-5 w-5 text-secondary flex-shrink-0 mt-1" />
                 <div className="text-muted-foreground">
                   <p className="font-medium">Johannesburg, South Africa</p>
-                  <p className="text-sm text-muted-foreground/80">{company.credentials.ttosRegistration} • {company.credentials.visaServices}</p>
+                  <p className="text-sm text-muted-foreground/80">{company.credentials.visaServices}</p>
                 </div>
               </div>
             </div>
@@ -138,7 +137,14 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex flex-wrap items-center gap-8">
               <div className="flex items-center gap-2">
-                <span className="bg-secondary text-primary-foreground px-4 py-2 rounded-full text-sm font-medium">TTOS Member</span>
+                <Image
+                  src="/images/bgcsa-verified-badge.jpg"
+                  alt="BGCSA Verified Business"
+                  width={36}
+                  height={36}
+                  className="rounded-full"
+                />
+                <span className="bg-secondary text-primary-foreground px-4 py-2 rounded-full text-sm font-medium">BGCSA Verified</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="bg-secondary text-primary-foreground px-4 py-2 rounded-full text-sm font-medium">Visa Services</span>
@@ -151,7 +157,7 @@ export default function Footer() {
             </div>
 
             <div className="text-sm text-muted-foreground">
-              <span>Licensed Tour Operator • {company.credentials.ttosRegistration}</span>
+              <span>Licensed Tour Operator • BGCSA Verified Business</span>
             </div>
           </div>
         </div>

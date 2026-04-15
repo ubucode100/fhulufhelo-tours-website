@@ -9,7 +9,7 @@ This document outlines the complete user journey through the Fhulufhelo Tours we
 ### 1. Homepage Entry
 **User arrives at homepage**
 - Company introduction highlighting 25 years of experience
-- TTOS registration and visa services prominently displayed
+- Visa services prominently displayed
 - Service options presented in order:
   1. Day Tours
   2. Tour Packages
@@ -83,14 +83,14 @@ This document outlines the complete user journey through the Fhulufhelo Tours we
 - Browse other service categories
 - Navigate directly between Day Tours and Tour Packages
 - Add Airport Transfers to any tour selection
-- Access company information and TTOS credentials
+- Access company information and credentials
 
 ### 4. Booking Process
 
 **User clicks "Book Now" from any service**
 - Booking form opens
 - Required information collection
-- Visa services offered (integrated TTOS option)
+- Visa services offered during booking
 - Final service review
 - Booking confirmation
 
@@ -103,14 +103,13 @@ This document outlines the complete user journey through the Fhulufhelo Tours we
 
 #### Visa Services Integration
 **Throughout the journey:**
-- TTOS registration highlighted on homepage
 - Visa application services offered during booking process
 - 2-5 working days processing time clearly stated
 
 #### Information Seeking
 **Users can access:**
 - Company credentials and 25-year experience
-- TTOS registration details
+- Visa services information
 - Contact information
 - WhatsApp connection for inquiries
 

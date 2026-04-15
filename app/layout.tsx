@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: "%s | Fhulufhelo Tours - South African Safari Specialists",
   },
   description:
-    "Experience South Africa with Fhulufhelo Tours - 25 years of excellence in safari tours, cultural experiences, and custom travel packages. Big 5 wildlife safaris, Soweto tours, Kruger National Park, and Pilanesberg adventures. TTOS registered tour operator.",
+    "Experience South Africa with Fhulufhelo Tours - 25 years of excellence in safari tours, cultural experiences, and custom travel packages. Big 5 wildlife safaris, Soweto tours, Kruger National Park, and Pilanesberg adventures. BGCSA verified tour operator.",
   keywords: [
     "South African tours",
     "safari tours South Africa",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     "Sun City tours",
     "Apartheid Museum tours",
     "custom South Africa tours",
-    "TTOS registered tour operator",
+    "BGCSA verified tour operator",
     "malaria-free safari",
     "Madikwe Game Park",
     "Panorama Route tours",
@@ -86,7 +86,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Fhulufhelo Tours - South African Safari & Cultural Tours",
     description:
-      "25 years of excellence in South African safari tours, Big 5 wildlife experiences, and cultural adventures. TTOS registered tour operator.",
+      "25 years of excellence in South African safari tours, Big 5 wildlife experiences, and cultural adventures. BGCSA verified.",
     images: ["/images/packages/madikwe_game_park_experiance_1.jpeg"],
     creator: "@FhulufheloTours",
   },
@@ -304,8 +304,8 @@ export default function RootLayout({
               ],
               memberOf: {
                 "@type": "Organization",
-                name: "Tourism Trade Organization of South Africa",
-                alternateName: "TTOS",
+                name: "Business Grading Council of South Africa",
+                alternateName: "BGCSA",
               },
             }),
           }}

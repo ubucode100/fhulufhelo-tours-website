@@ -1277,7 +1277,7 @@ export const company = {
   tagline: "25 Years of Tourism Excellence in South Africa",
   description: "Fhulufhelo Tours is a leading South African tour operator with 25 years of experience in providing tailor-made tourism experiences. We specialize in day tours, multi-day packages, and custom multi-city tours across South Africa's most iconic destinations.",
   credentials: {
-    ttosRegistration: "TTOS Registered Tour Operator",
+    bgcsaVerified: "BGCSA Verified Business",
     visaServices: "Visa Application Services Available",
     processingTime: "2-5 working days processing time"
   },
@@ -1433,7 +1433,7 @@ export const airportTransfers = [
 
 /**
  * Visa application services.
- * Professional visa application assistance with TTOS registration.
+ * Professional visa application assistance.
  */
 export const visaServices = [
   {
@@ -1467,7 +1467,6 @@ export const visaServices = [
       "Proof of accommodation",
       "Financial statements"
     ],
-    ttosRegistration: "TTOS Registered Tour Operator",
     availableHours: "Monday - Friday, 08:00 - 17:00"
   }
 ]

@@ -1,9 +1,10 @@
 "use client"
 
 import { BadgeCheck } from "lucide-react"
+import Image from "next/image"
 
 const trustStats = [
-  { 
+  {
     number: "25+",
     label: "Years of Excellence",
     description: "Trusted South African tour operator since 1999",
@@ -14,9 +15,9 @@ const trustStats = [
     description: "Consistently rated excellent by our guests",
   },
   {
-    number: "TTOS",
-    label: "Certified Operator",
-    description: "Official visa processing in 2-5 working days",
+    number: "50+",
+    label: "Destinations",
+    description: "Iconic locations across South Africa and beyond",
   },
   {
     number: "100%",
@@ -63,6 +64,21 @@ export default function TrustSection() {
               <div className="text-xs lg:text-sm text-foreground/50 font-light leading-relaxed">{stat.description}</div>
             </div>
           ))}
+        </div>
+
+        {/* BGCSA Verification Badge */}
+        <div className="mt-12 lg:mt-16 flex flex-col sm:flex-row items-center justify-center gap-4 pt-8 border-t border-foreground/10">
+          <Image
+            src="/images/bgcsa-verified-badge.jpg"
+            alt="Business Grading Council of South Africa - Verified Business"
+            width={56}
+            height={56}
+            className="rounded-full"
+          />
+          <div className="text-center sm:text-left">
+            <p className="text-sm font-medium text-foreground">Verified by the Business Grading Council of South Africa</p>
+            <p className="text-xs text-foreground/50">Trusted Travel and Tours Company</p>
+          </div>
         </div>
       </div>
     </section>

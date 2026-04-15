@@ -43,7 +43,7 @@ export const NAVIGATION_LINKS = {
     credentials: {
       label: 'Credentials',
       href: '/credentials',
-      description: 'TTOS registration and visa services'
+      description: 'Visa services and certifications'
     },
     contact: {
       label: 'Contact',
@@ -110,11 +110,6 @@ export const FOOTER_LINKS = {
         label: 'About Us',
         href: '/about',
         description: `${company.experience.years} years of tourism experience`
-      },
-      {
-        label: 'TTOS Registration',
-        href: '/credentials/ttos',
-        description: 'Tourism authority registration'
       },
       {
         label: 'Visa Services',
